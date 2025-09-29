@@ -34,13 +34,10 @@ Talisman(
     content_security_policy=csp,
     content_security_policy_nonce_in=['script-src'],
     frame_options='DENY',
-    force_https=False if os.environ.get('DISABLE_HSTS') == '1' else True,
-    strict_transport_security=True,
-    strict_transport_security_max_age=31536000,
-    strict_transport_security_include_subdomains=True,
-    strict_transport_security_preload=True,
+    force_https=False,  # Disable HTTPS enforcement for HTTP mode
+    strict_transport_security=False,  # Disable HSTS for HTTP mode
     referrer_policy='no-referrer',
-    session_cookie_secure=True,
+    session_cookie_secure=False,  # Allow non-secure cookies for HTTP
     session_cookie_http_only=True,
     session_cookie_samesite='Lax'
 )
