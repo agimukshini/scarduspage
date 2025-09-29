@@ -28,7 +28,7 @@ ENV PATH="/venv/bin:$PATH"
 COPY app.py ./
 COPY templates/ ./templates/
 # Static logo mapping expects ScardusLogo.png in project root
-COPY ScardusLogo.png ./
+COPY static/ScardusLogo.png ./
 
 # Runtime security hardening
 USER ${APP_USER}
