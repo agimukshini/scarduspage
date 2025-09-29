@@ -1,16 +1,37 @@
+# Python
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 *.log
-.env
 venv/
 .venv/
+.env
 .env.local
+
+# Git
 .git/
 .gitignore
-node_modules/
-.DS_Store
-*.sqlite3
+
+# IDE
 **/.vscode/
 **/.idea/
+.DS_Store
+
+# Node
+node_modules/
+
+# Database
+*.sqlite3
+
+# Complex Flask files (not needed for simple server)
+app.py
+requirements.txt
+templates/
+static/
+Dockerfile.complex
+README_SIMPLE.md
+run_server.bat
+
+# Documentation (but keep README_SIMPLE.md for reference)
+README_SIMPLE.md

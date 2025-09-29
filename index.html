@@ -1,664 +1,657 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SCARDUS TECH - Your Trusted Partner in IT Solutions</title>
-    <meta name="description" content="SCARDUS TECH provides professional IT services including helpdesk outsourcing, tech sales, maintenance, and software development.">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body class="theme-hero">
-    <!-- Global hero-style animated background -->
-    <div class="global-background" aria-hidden="true">
-        <svg id="globalNetwork" viewBox="0 0 1200 2400" preserveAspectRatio="xMidYMid slice"></svg>
-    </div>
-    <header id="header">
-        <nav class="container">
-            <div class="logo">
-                <img src="ScardusLogo.png" alt="Scardus Tech Logo" class="company-logo">
-                <span>SCARDUS TECH</span>
-            </div>
-            <button class="mobile-menu" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li class="services-dropdown">
-                    <a href="#services">Services <span class="dropdown-arrow">▼</span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#services">IT Helpdesk Outsourcing</a></li>
-                        <li><a href="#services">IT Tech Sales & Installation</a></li>
-                        <li><a href="#services">IT Maintenance & Support</a></li>
-                        <li><a href="#services">Software Development</a></li>
-                    </ul>
-                </li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#team">Team</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<html><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCARDUS TECH - Your Trusted Partner in IT Operations Excellence</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <style>
+      ::-webkit-scrollbar { display: none; }
+      body { font-family: 'Inter', sans-serif; }
+      .network-bg {
+          background: linear-gradient(135deg, #000000 0%, #262626 100%);
+          position: relative;
+          overflow: hidden;
+      }
+      .network-bg::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-image: 
+              radial-gradient(circle at 20% 30%, rgba(65, 105, 225, 0.1) 1px, transparent 1px),
+              radial-gradient(circle at 80% 70%, rgba(65, 105, 225, 0.1) 1px, transparent 1px),
+              radial-gradient(circle at 40% 80%, rgba(65, 105, 225, 0.1) 1px, transparent 1px);
+          background-size: 100px 100px, 150px 150px, 120px 120px;
+          animation: networkFloat 20s infinite linear;
+      }
+      @keyframes networkFloat {
+          0% { transform: translate(0, 0); }
+          100% { transform: translate(-20px, -20px); }
+      }
+      .glass-card {
+          backdrop-filter: blur(10px);
+          background: rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+  </style>
+  <script>tailwind.config = {
+"theme": {
+  "extend": {
+    "colors": {
+      "primary": "#4169E1",
+      "dark": "#000000",
+      "charcoal": "#262626",
+      "light-gray": "#D3D3D3",
+      "off-white": "#F8F8F8"
+    },
+    "fontFamily": {
+      "poppins": [
+        "Poppins",
+        "sans-serif"
+      ]
+    }
+  }
+}
+};</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"><style>
+.highlighted-section {
+  outline: 2px solid #3F20FB;
+  background-color: rgba(63, 32, 251, 0.1);
+}
 
-    <main>
-        <section id="home" class="hero hero-contrast">
-            <div class="hero-background" aria-hidden="true">
-                <svg id="heroNetwork" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice"></svg>
-            </div>
-            <div class="container hero-content">
-                <h1 class="hero-title reveal reveal-delay-1">Your Trusted Partner in <span class="gradient-text">IT Operations Excellence</span></h1>
-                <p class="hero-subtitle reveal reveal-delay-2">We architect resilient, secure, and automated IT ecosystems that power mission‑critical outcomes.</p>
+.edit-button {
+  position: absolute;
+  z-index: 1000;
+}
 
-                <div class="feature-pills reveal reveal-delay-3">
-                    <div class="pill">
-                        <svg class="pill-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M2 12h3M19 12h3M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12"/></svg>
-                        <span>Neural Network Insights</span>
-                    </div>
-                    <div class="pill">
-                        <svg class="pill-icon" viewBox="0 0 24 24"><path d="M9 21h6M12 17v4M4 13h16M7 13a5 5 0 1 1 10 0"/></svg>
-                        <span>Automation at Scale</span>
-                    </div>
-                    <div class="pill">
-                        <svg class="pill-icon" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.17-1.01 3.74-2.5 5l-.5 4h-8l-.5-4C6.99 12.74 6 11.17 6 9a7 7 0 0 1 6-7Z"/><path d="M9 22h6"/></svg>
-                        <span>Innovation-Driven</span>
-                    </div>
-                </div>
+::-webkit-scrollbar {
+  display: none;
+}
 
-                <div class="hero-ctas reveal reveal-delay-3" style="margin-top: 0.5rem;">
-                    <a class="btn btn-primary" href="#contact">Get a Proposal</a>
-                    <a class="btn btn-secondary" href="#projects">View Projects</a>
-                </div>
+html, body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+</style></head>
+<body class="bg-dark text-white">
 
-                <!-- Trust Narrative -->
-                <div class="trust-panel reveal reveal-delay-4">
-                    <p class="trust-lede">
-                        We partner with organizations where reliability, security, and compliance matter most, including
-                        government institutions, defense and military contractors, public agencies, and regulated enterprises.
-                        Our engineers help teams modernize infrastructure, secure operations, and deliver mission‑critical outcomes.
-                    </p>
-                    <div class="trust-badges">
-                        <div class="badge">
-                            <span class="badge-title">Government & Public Sector</span>
-                            <span class="badge-sub">Trusted delivery in high‑assurance environments</span>
-                        </div>
-                        <div class="badge">
-                            <span class="badge-title">Defense & Military</span>
-                            <span class="badge-sub">Operational excellence for mission‑critical systems</span>
-                        </div>
-                        <div class="badge">
-                            <span class="badge-title">Regulated Enterprises</span>
-                            <span class="badge-sub">Security, resilience, and measurable outcomes</span>
-                        </div>
-                    </div>
-                    <div class="compliance-note">
-                        <strong>NIST & CMMC Readiness:</strong> We help companies implement NIST SP 800‑171 controls and prepare for
-                        CMMC compliance, from gap assessments and SSP/POA&M development to technical hardening, monitoring, and continuous improvement.
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- Header -->
+<header id="header" class="fixed top-0 w-full z-50 bg-dark/90 backdrop-blur-md border-b border-charcoal">
+  <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+          <img class="w-10 h-10" src="{{ url_for('static', filename='ScardusLogo.png') }}" alt="Scardus Tech Logo">
+          <span class="text-xl font-bold text-white">SCARDUS TECH</span>
+      </div>
+      
+      <div class="hidden md:flex items-center space-x-8">
+          <a href="#hero" class="text-light-gray hover:text-white transition-colors">Home</a>
+          <a href="#about" class="text-light-gray hover:text-white transition-colors">About</a>
+          <div class="relative group">
+              <a href="#services" class="text-light-gray hover:text-white transition-colors flex items-center">
+                  Services <i class="fa-solid fa-chevron-down ml-1 text-xs"></i>
+              </a>
+              <div class="absolute top-full left-0 mt-2 w-48 bg-charcoal rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                  <a href="#services" class="block px-4 py-2 text-light-gray hover:text-white">IT Operations</a>
+                  <a href="#services" class="block px-4 py-2 text-light-gray hover:text-white">Cybersecurity</a>
+                  <a href="#services" class="block px-4 py-2 text-light-gray hover:text-white">Custom Software</a>
+              </div>
+          </div>
+          <a href="#projects" class="text-light-gray hover:text-white transition-colors">Projects</a>
+          <a href="#team" class="text-light-gray hover:text-white transition-colors">Team</a>
+          <a href="#contact" class="text-light-gray hover:text-white transition-colors">Contact</a>
+      </div>
+      
+      <div class="md:hidden">
+          <button id="mobile-menu-btn" class="text-white">
+              <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+      </div>
+  </nav>
+  
+  <div id="mobile-menu" class="md:hidden bg-charcoal hidden">
+      <div class="px-6 py-4 space-y-3">
+          <a href="#hero" class="block text-light-gray hover:text-white">Home</a>
+          <a href="#about" class="block text-light-gray hover:text-white">About</a>
+          <a href="#services" class="block text-light-gray hover:text-white">Services</a>
+          <a href="#projects" class="block text-light-gray hover:text-white">Projects</a>
+          <a href="#team" class="block text-light-gray hover:text-white">Team</a>
+          <a href="#contact" class="block text-light-gray hover:text-white">Contact</a>
+      </div>
+  </div>
+</header>
 
-        <section id="about" class="about">
-            <div class="container about-grid">
-                <div class="about-visual reveal reveal-delay-1" aria-hidden="true">
-                    <!-- Framed image treatment inspired by Codetiq -->
-                    <div class="about-photo-frame">
-                        <span class="frame-blob"></span>
-                        <span class="frame-ring"></span>
-                        <span class="frame-dots"></span>
-                        <img src="ScardusLogo.png" alt="Scardus Tech" class="about-photo" />
-                        <span class="frame-shine"></span>
-                    </div>
-                </div>
+<!-- Hero Section -->
+<section id="hero" class="network-bg h-[800px] flex items-center justify-center text-center relative scroll-mt-24">
+  <div class="max-w-5xl mx-auto px-6 z-10">
+      <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+          Your Trusted Partner in<br>
+          <span class="text-primary">IT Operations Excellence</span>
+      </h1>
+      
+      <p class="text-xl text-light-gray mb-8 max-w-3xl mx-auto">
+          We architect resilient, secure, and automated IT ecosystems that power mission‑critical outcomes.
+      </p>
+      
+      <div class="flex flex-wrap justify-center gap-4 mb-8">
+          <div class="flex items-center bg-charcoal/50 px-4 py-2 rounded-full">
+              <i class="fa-solid fa-brain text-primary mr-2"></i>
+              <span class="text-sm">Neural Network Insights</span>
+          </div>
+          <div class="flex items-center bg-charcoal/50 px-4 py-2 rounded-full">
+              <i class="fa-solid fa-robot text-primary mr-2"></i>
+              <span class="text-sm">Automation at Scale</span>
+          </div>
+          <div class="flex items-center bg-charcoal/50 px-4 py-2 rounded-full">
+              <i class="fa-solid fa-lightbulb text-primary mr-2"></i>
+              <span class="text-sm">Innovation‑Driven</span>
+          </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <span class="bg-primary hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold transition-all hover:transform hover:scale-105 cursor-pointer">
+              Get a Proposal
+          </span>
+          <span class="border border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-lg font-semibold transition-all cursor-pointer">
+              View Projects
+          </span>
+      </div>
+  </div>
+</section>
 
-                <div class="about-content">
-                    <h2>About Us</h2>
-                    <div class="about-intro">
-                        <p class="welcome-text">Welcome to <strong>SCARDUS TECH</strong> — where innovation meets reliability.</p>
-                        <p>Inspired by the enduring strength of the Sharr Mountains, our name reflects the solid foundation and excellence we bring to every project.</p>
-                        <p>We deliver end-to-end technology solutions that empower businesses to operate smarter, safer, and more efficiently. From helpdesk support to advanced network engineering and custom software development, we are your trusted partner in building resilient and future-ready IT systems.</p>
-                    </div>
+<!-- Trust Panel -->
+<section id="trust-panel" class="bg-charcoal py-16">
+  <div class="max-w-6xl mx-auto px-6">
+      <p class="text-lg text-light-gray mb-12 text-center max-w-4xl mx-auto">
+          We partner with organizations where reliability, security, and compliance matter most, delivering measurable outcomes that strengthen operational resilience and accelerate mission success.
+      </p>
+      
+      <div class="grid md:grid-cols-3 gap-8 mb-12">
+          <div class="bg-dark p-6 rounded-lg border border-primary/30">
+              <h3 class="text-primary font-semibold mb-2">Government &amp; Public Sector</h3>
+              <p class="text-light-gray text-sm">Trusted delivery in high‑assurance environments</p>
+          </div>
+          <div class="bg-dark p-6 rounded-lg border border-primary/30">
+              <h3 class="text-primary font-semibold mb-2">Defense &amp; Military</h3>
+              <p class="text-light-gray text-sm">Operational excellence for mission‑critical systems</p>
+          </div>
+          <div class="bg-dark p-6 rounded-lg border border-primary/30">
+              <h3 class="text-primary font-semibold mb-2">Regulated Enterprises</h3>
+              <p class="text-light-gray text-sm">Security, resilience, and measurable outcomes</p>
+          </div>
+      </div>
+      
+      <div class="bg-dark/50 p-6 rounded-lg border border-primary/20">
+          <h4 class="text-primary font-semibold mb-2">NIST &amp; CMMC Readiness</h4>
+          <p class="text-light-gray text-sm">We help companies implement NIST SP 800‑171 controls and prepare for CMMC compliance through practical security programs that enhance both protection and productivity.</p>
+      </div>
+  </div>
+</section>
 
-                    
-                </div>
-            </div>
-            
-            <!-- Next row: What We Do + Why Choose Us in one row -->
-            <div class="container about-next">
-                <div class="what-we-do info-card">
-                    <h3>What We Do</h3>
-                    <ul class="services-list">
-                        <li>
-                            <strong>Helpdesk Support (Tier 1 & 2)</strong>
-                            Fast help for everyday issues, with simple escalation when needed.
-                        </li>
-                        <li>
-                            <strong>Buy & Set Up Tech</strong>
-                            We source the right gear, install it, and manage it through its lifecycle.
-                        </li>
-                        <li>
-                            <strong>Keep Things Running</strong>
-                            Updates, monitoring, and quick incident response.
-                        </li>
-                        <li>
-                            <strong>Custom Software</strong>
-                            Tools built for your workflow that connect to your existing systems.
-                        </li>
-                        <li>
-                            <strong>End‑to‑End Delivery</strong>
-                            Planning, rollout, documentation, and training—handled for you.
-                        </li>
-                    </ul>
-                </div>
-                <div class="why-choose-us info-card">
-                    <h3>Why Choose Us</h3>
-                    <ul class="services-list">
-                        <li>
-                            <strong>Reliable</strong>
-                            Built for uptime and predictable support.
-                        </li>
-                        <li>
-                            <strong>Secure</strong>
-                            Practical security aligned to NIST 800‑171 and CMMC.
-                        </li>
-                        <li>
-                            <strong>Experienced</strong>
-                            Government, defense, and regulated industries.
-                        </li>
-                        <li>
-                            <strong>Measurable</strong>
-                            SLAs, KPIs, and clear reporting tied to your goals.
-                        </li>
-                        <li>
-                            <strong>Collaborative</strong>
-                            Transparent, proactive, and accountable.
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+<!-- About Section -->
+<section id="about" class="bg-dark py-20 scroll-mt-24">
+  <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          <div>
+              <div class="bg-charcoal p-8 rounded-lg border border-primary/30 text-center">
+                  <img class="w-20 h-20 mx-auto mb-4" src="{{ url_for('static', filename='ScardusLogo.png') }}" alt="Scardus Tech Logo">
+                  <h3 class="text-xl font-semibold text-primary">SCARDUS TECH</h3>
+              </div>
+          </div>
+          <div>
+              <h2 class="text-3xl font-bold mb-6">Welcome to SCARDUS TECH</h2>
+              <p class="text-light-gray mb-4">
+                  Welcome to SCARDUS TECH — where innovation meets reliability.
+              </p>
+              <p class="text-light-gray mb-4">
+                  Inspired by the enduring strength of the Sharr Mountains, we bring that same resilience to your technology infrastructure.
+              </p>
+              <p class="text-light-gray">
+                  We deliver end-to-end technology solutions from helpdesk support to custom software development, ensuring your operations run smoothly and securely.
+              </p>
+          </div>
+      </div>
+      
+      <div class="grid lg:grid-cols-2 gap-8">
+          <div id="what-we-do" class="bg-charcoal p-8 rounded-lg">
+              <h3 class="text-2xl font-bold mb-6 text-primary">What We Do</h3>
+              <div class="space-y-4">
+                  <div>
+                      <h4 class="font-semibold text-white mb-1">Helpdesk Support (Tier 1 &amp; 2)</h4>
+                      <p class="text-light-gray text-sm">Fast help for everyday issues, with simple escalation when needed.</p>
+                  </div>
+                  <div>
+                      <h4 class="font-semibold text-white mb-1">Buy &amp; Set Up Tech</h4>
+                      <p class="text-light-gray text-sm">We source the right gear, install it, and manage it through its lifecycle.</p>
+                  </div>
+                  <div>
+                      <h4 class="font-semibold text-white mb-1">Keep Things Running</h4>
+                      <p class="text-light-gray text-sm">Updates, monitoring, and quick incident response.</p>
+                  </div>
+                  <div>
+                      <h4 class="font-semibold text-white mb-1">Custom Software</h4>
+                      <p class="text-light-gray text-sm">Tools built for your workflow that connect to your existing systems.</p>
+                  </div>
+                  <div>
+                      <h4 class="font-semibold text-white mb-1">End‑to‑End Delivery</h4>
+                      <p class="text-light-gray text-sm">Planning, rollout, documentation, and training—handled for you.</p>
+                  </div>
+              </div>
+          </div>
+          
+          <div id="why-choose-us" class="bg-charcoal p-8 rounded-lg">
+              <h3 class="text-2xl font-bold mb-6 text-primary">Why Choose Us</h3>
+              <div class="space-y-4">
+                  <div>
+                      <h4 class="font-semibold text-white mb-1">Reliable</h4>
+                      <p class="text-light-gray text-sm">Built for uptime and predictable support.</p>
+                  </div>
+                  <div>
+                      <h4 class="font-semibold text-white mb-1">Secure</h4>
+                      <p class="text-light-gray text-sm">Practical security aligned to NIST 800‑171 and CMMC.</p>
+                  </div>
+                  <div>
+                      <h4 class="font-semibold text-white mb-1">Experienced</h4>
+                      <p class="text-light-gray text-sm">Government, defense, and regulated industries.</p>
+                  </div>
+                  <div>
+                      <h4 class="font-semibold text-white mb-1">Measurable</h4>
+                      <p class="text-light-gray text-sm">SLAs, KPIs, and clear reporting tied to your goals.</p>
+                  </div>
+                  <div>
+                      <h4 class="font-semibold text-white mb-1">Collaborative</h4>
+                      <p class="text-light-gray text-sm">Transparent, proactive, and accountable.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
 
-        <section id="services" class="services">
-            <div class="container">
-                <h2>Our Services</h2>
-                <div class="service-grid">
-                    <div class="service-card">
-                        <h3>End‑to‑End IT Operations</h3>
-                        <p>Plan, build, run, and optimize your entire IT landscape — from strategy and architecture to day‑2 operations and continuous improvement.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Helpdesk & Field Support</h3>
-                        <p>Tier 1/2 support with clear SLAs, escalation playbooks, remote assistance, and on‑site dispatch to keep users productive.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Infrastructure & Cloud</h3>
-                        <p>Secure networks, servers, and endpoints on‑prem and cloud (AWS/Azure). Migrations, hardening, backup/DR, and cost optimization.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Cybersecurity & Compliance</h3>
-                        <p>NIST SP 800‑171 implementation, CMMC readiness, policy/SSP & POA&M, vulnerability management, and continuous monitoring.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Automation & AI Integrations</h3>
-                        <p>Automate workflows with RPA and orchestration, integrate AI/ML for insight, triage, and intelligent assistance across your stack.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Custom Apps & Integrations</h3>
-                        <p>Tailored application development, API integrations, and data pipelines that connect systems and streamline business processes.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Observability & SRE</h3>
-                        <p>Unified logging, metrics, and tracing with actionable SLOs/SLA reporting to improve reliability, performance, and MTTR.</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>Procurement & Deployment</h3>
-                        <p>Vendor‑neutral selection, licensing, and lifecycle management with standardized, automated rollouts at scale.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- Services Section -->
+<section id="services" class="bg-charcoal py-20 scroll-mt-24">
+  <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-16">Our Services</h2>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-dark p-6 rounded-lg border border-primary/30 hover:border-primary transition-colors">
+              <i class="fa-solid fa-cogs text-primary text-2xl mb-4"></i>
+              <h3 class="font-semibold mb-3">End‑to‑End IT Operations</h3>
+              <p class="text-light-gray text-sm">Strategy, architecture, day‑2 ops, continuous improvement.</p>
+          </div>
+          
+          <div class="bg-dark p-6 rounded-lg border border-primary/30 hover:border-primary transition-colors">
+              <i class="fa-solid fa-headset text-primary text-2xl mb-4"></i>
+              <h3 class="font-semibold mb-3">Helpdesk &amp; Field Support</h3>
+              <p class="text-light-gray text-sm">Tier 1/2 SLAs, escalation playbooks, remote/on‑site support.</p>
+          </div>
+          
+          <div class="bg-dark p-6 rounded-lg border border-primary/30 hover:border-primary transition-colors">
+              <i class="fa-solid fa-cloud text-primary text-2xl mb-4"></i>
+              <h3 class="font-semibold mb-3">Infrastructure &amp; Cloud</h3>
+              <p class="text-light-gray text-sm">Networks, servers, endpoints on‑prem/cloud (AWS/Azure). Migrations, hardening, backup/DR.</p>
+          </div>
+          
+          <div class="bg-dark p-6 rounded-lg border border-primary/30 hover:border-primary transition-colors">
+              <i class="fa-solid fa-shield-alt text-primary text-2xl mb-4"></i>
+              <h3 class="font-semibold mb-3">Cybersecurity &amp; Compliance</h3>
+              <p class="text-light-gray text-sm">NIST SP 800‑171, CMMC readiness, SSP/POA&amp;M, vuln mgmt, monitoring.</p>
+          </div>
+          
+          <div class="bg-dark p-6 rounded-lg border border-primary/30 hover:border-primary transition-colors">
+              <i class="fa-solid fa-robot text-primary text-2xl mb-4"></i>
+              <h3 class="font-semibold mb-3">Automation &amp; AI Integrations</h3>
+              <p class="text-light-gray text-sm">RPA/orchestration, AI/ML for insight and triage.</p>
+          </div>
+          
+          <div class="bg-dark p-6 rounded-lg border border-primary/30 hover:border-primary transition-colors">
+              <i class="fa-solid fa-code text-primary text-2xl mb-4"></i>
+              <h3 class="font-semibold mb-3">Custom Apps &amp; Integrations</h3>
+              <p class="text-light-gray text-sm">Tailored apps, APIs, data pipelines.</p>
+          </div>
+          
+          <div class="bg-dark p-6 rounded-lg border border-primary/30 hover:border-primary transition-colors">
+              <i class="fa-solid fa-chart-line text-primary text-2xl mb-4"></i>
+              <h3 class="font-semibold mb-3">Observability &amp; SRE</h3>
+              <p class="text-light-gray text-sm">Logging/metrics/tracing, SLOs/SLAs, reliability/MTTR.</p>
+          </div>
+          
+          <div class="bg-dark p-6 rounded-lg border border-primary/30 hover:border-primary transition-colors">
+              <i class="fa-solid fa-shopping-cart text-primary text-2xl mb-4"></i>
+              <h3 class="font-semibold mb-3">Procurement &amp; Deployment</h3>
+              <p class="text-light-gray text-sm">Vendor‑neutral selection, licensing, lifecycle, standardized rollouts.</p>
+          </div>
+      </div>
+  </div>
+</section>
 
-        <section id="projects" class="projects">
-            <div class="container">
-                <h2 class="gradient-text reveal">Our Success Stories</h2>
-                <p class="section-subtitle reveal reveal-delay-1">A few wins we're proud of (and still brag about)</p>
-                
-                <div class="projects-grid">
-                    <!-- Project Card 1 -->
-                    <div class="project-card modern-card reveal reveal-delay-1" data-project-id="1">
-                        <div class="project-image">
-                            <img src="project1.jpg" alt="Enterprise Software Solution" class="glass">
-                            <div class="project-category">Software Development</div>
-                        </div>
-                        <div class="project-content">
-                            <h3>ERP, minus the headaches</h3>
-                            <p>Planning got sharper. Reports got faster. Fire drills got rarer. Leaders finally saw what’s going on—without 12 spreadsheets.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">.NET Core</span>
-                                <span class="tech-tag">React</span>
-                                <span class="tech-tag">SQL Server</span>
-                            </div>
-                            <button class="view-project-btn modern-button" onclick="openProjectDetails(1)">
-                                View Project Details
-                            </button>
-                        </div>
-                    </div>
+<!-- Projects Section -->
+<section id="projects" class="bg-dark py-20 scroll-mt-24">
+  <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-16">Featured Projects</h2>
+      
+      <div class="grid lg:grid-cols-3 gap-8">
+          <div class="bg-charcoal rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all cursor-pointer" onclick="openModal('project1')">
+              <img class="w-full h-48 object-cover" loading="lazy" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="Modern ERP dashboard interface with analytics widgets">
+              <div class="p-6">
+                  <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs">Enterprise Software</span>
+                  <h3 class="font-semibold mt-4 mb-2">ERP, minus the headaches</h3>
+                  <p class="text-light-gray text-sm mb-4">Planning got sharper… without 12 spreadsheets.</p>
+                  <div class="flex flex-wrap gap-2">
+                      <span class="bg-dark px-2 py-1 rounded text-xs">.NET Core</span>
+                      <span class="bg-dark px-2 py-1 rounded text-xs">React</span>
+                      <span class="bg-dark px-2 py-1 rounded text-xs">SQL Server</span>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="bg-charcoal rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all cursor-pointer" onclick="openModal('project2')">
+              <img class="w-full h-48 object-cover" loading="lazy" src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1200&q=80" alt="Cloud infrastructure concept with servers and connections">
+              <div class="p-6">
+                  <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs">Cloud Migration</span>
+                  <h3 class="font-semibold mt-4 mb-2">Cloud migration, no drama</h3>
+                  <p class="text-light-gray text-sm mb-4">Secure landing zone… panic slowed down.</p>
+                  <div class="flex flex-wrap gap-2">
+                      <span class="bg-dark px-2 py-1 rounded text-xs">AWS</span>
+                      <span class="bg-dark px-2 py-1 rounded text-xs">Docker</span>
+                      <span class="bg-dark px-2 py-1 rounded text-xs">Kubernetes</span>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="bg-charcoal rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all cursor-pointer" onclick="openModal('project3')">
+              <img class="w-full h-48 object-cover" loading="lazy" src="https://images.unsplash.com/photo-1525182008055-f88b95ff7980?auto=format&fit=crop&w=1200&q=80" alt="IT help desk team providing support at modern office">
+              <div class="p-6">
+                  <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs">IT Support</span>
+                  <h3 class="font-semibold mt-4 mb-2">Help desk that actually helps</h3>
+                  <p class="text-light-gray text-sm mb-4">24/7 support, clear SLAs… even on Mondays.</p>
+                  <div class="flex flex-wrap gap-2">
+                      <span class="bg-dark px-2 py-1 rounded text-xs">ServiceNow</span>
+                      <span class="bg-dark px-2 py-1 rounded text-xs">ITIL</span>
+                      <span class="bg-dark px-2 py-1 rounded text-xs">Power BI</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
 
-                    <!-- Project Card 2 -->
-                    <div class="project-card modern-card reveal reveal-delay-2" data-project-id="2">
-                        <div class="project-image">
-                            <img src="project2.jpg" alt="IT Infrastructure Setup" class="glass">
-                            <div class="project-category">Infrastructure</div>
-                        </div>
-                        <div class="project-content">
-                            <h3>Cloud migration, no drama</h3>
-                            <p>Secure landing zone, automated deploys, smaller bills. Releases sped up, panic slowed down.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">AWS</span>
-                                <span class="tech-tag">Docker</span>
-                                <span class="tech-tag">Kubernetes</span>
-                            </div>
-                            <button class="view-project-btn modern-button" onclick="openProjectDetails(2)">
-                                View Project Details
-                            </button>
-                        </div>
-                    </div>
+<!-- Why SCARDUS TECH Section -->
+<section id="why-scardus" class="bg-charcoal py-20">
+  <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+              <h2 class="text-3xl font-bold mb-8">Why SCARDUS TECH</h2>
+              <div class="space-y-4">
+                  <div class="flex items-start">
+                      <i class="fa-solid fa-check-circle text-primary mt-1 mr-3"></i>
+                      <div>
+                          <h3 class="font-semibold mb-1">Reliability</h3>
+                          <p class="text-light-gray text-sm">Reduce downtime and risk with proven methodologies</p>
+                      </div>
+                  </div>
+                  <div class="flex items-start">
+                      <i class="fa-solid fa-check-circle text-primary mt-1 mr-3"></i>
+                      <div>
+                          <h3 class="font-semibold mb-1">Security &amp; Compliance</h3>
+                          <p class="text-light-gray text-sm">NIST SP 800‑171, CMMC readiness built-in</p>
+                      </div>
+                  </div>
+                  <div class="flex items-start">
+                      <i class="fa-solid fa-check-circle text-primary mt-1 mr-3"></i>
+                      <div>
+                          <h3 class="font-semibold mb-1">Automation</h3>
+                          <p class="text-light-gray text-sm">Orchestration and intelligent tooling</p>
+                      </div>
+                  </div>
+                  <div class="flex items-start">
+                      <i class="fa-solid fa-check-circle text-primary mt-1 mr-3"></i>
+                      <div>
+                          <h3 class="font-semibold mb-1">Partner Mindset</h3>
+                          <p class="text-light-gray text-sm">Transparent collaboration and accountability</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="bg-dark p-8 rounded-lg border border-primary/30">
+              <h3 class="text-xl font-semibold mb-4">Ready to Transform Your IT?</h3>
+              <p class="text-light-gray mb-6">Our team brings decades of experience in mission-critical environments. Let's discuss how we can strengthen your operations.</p>
+              <span class="bg-primary hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold inline-block transition-all cursor-pointer">
+                  Start a Conversation
+              </span>
+          </div>
+      </div>
+  </div>
+</section>
 
-                    <!-- Project Card 3 -->
-                    <div class="project-card modern-card reveal reveal-delay-3" data-project-id="3">
-                        <div class="project-image">
-                            <img src="project3.jpg" alt="Help Desk Solution" class="glass">
-                            <div class="project-category">IT Support</div>
-                        </div>
-                        <div class="project-content">
-                            <h3>Help desk that actually helps</h3>
-                            <p>24/7 support, clear SLAs, smart routing. Users get answers faster—and yes, even on Mondays.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">ServiceNow</span>
-                                <span class="tech-tag">ITIL</span>
-                                <span class="tech-tag">Power BI</span>
-                            </div>
-                            <button class="view-project-btn modern-button" onclick="openProjectDetails(3)">
-                                View Project Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!-- CTA Strip -->
+<section id="cta-strip" class="bg-primary py-16">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-4">Ready to accelerate your IT operations?</h2>
+      <p class="text-lg mb-8 opacity-90">Let's align on your goals and build a secure, automated, and resilient foundation together.</p>
+      <span class="bg-white text-primary hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-all cursor-pointer">
+          Explore Services
+      </span>
+  </div>
+</section>
 
-            <!-- Project Details Modal -->
-            <div id="projectModal" class="modal">
-                <div class="modal-content glass">
-                    <span class="close-modal">&times;</span>
-                    <div id="projectDetails">
-                        <div class="modal-header">
-                            <h2 id="modalTitle"></h2>
-                            <p id="modalCategory"></p>
-                        </div>
-                        <div class="modal-body">
-                            <div class="project-info">
-                                <div id="modalDescription"></div>
-                                <div class="project-stats">
-                                    <div class="stat">
-                                        <span class="stat-label">Duration</span>
-                                        <span id="modalDuration"></span>
-                                    </div>
-                                    <div class="stat">
-                                        <span class="stat-label">Team Size</span>
-                                        <span id="modalTeamSize"></span>
-                                    </div>
-                                    <div class="stat">
-                                        <span class="stat-label">Completion</span>
-                                        <span id="modalCompletion"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="project-files">
-                                <h3>Project Documents</h3>
-                                <div id="filesList"></div>
-                                <div class="file-upload">
-                                    <label for="projectFile" class="file-upload-label modern-button">
-                                        <svg class="upload-icon" viewBox="0 0 24 24">
-                                            <path d="M9 16h6v-6h4l-7-7-7 7h4v6zm-4 2h14v2H5v-2z"/>
-                                        </svg>
-                                        Upload Project Files
-                                    </label>
-                                    <input type="file" id="projectFile" multiple hidden>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- Team Section -->
+<section id="team" class="bg-dark py-20 scroll-mt-24">
+  <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-16">Our Team</h2>
+      
+      <div class="grid lg:grid-cols-3 gap-8">
+          <div class="bg-charcoal p-6 rounded-lg text-center">
+              <img src="{{ url_for('static', filename='AgimUkshini.jpg') }}" alt="Agim Ukshini" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+              <h3 class="font-semibold text-xl mb-2">Agim Ukshini</h3>
+              <p class="text-primary mb-4">Management</p>
+              <p class="text-light-gray text-sm mb-4">16 years leading complex IT programs with calm leadership, delivering outcomes on time and budget.</p>
+              <div class="text-xs text-light-gray">
+                  <p>Cross‑Functional Team Leadership</p>
+                  <p>Program Management</p>
+                  <p>Infrastructure Deployment</p>
+              </div>
+          </div>
+          
+          <div class="bg-charcoal p-6 rounded-lg text-center">
+              <img src="{{ url_for('static', filename='AvniAdemi.jpg') }}" alt="Avni Ademi" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+              <h3 class="font-semibold text-xl mb-2">Avni Ademi</h3>
+              <p class="text-primary mb-4">Senior DevOps</p>
+              <p class="text-light-gray text-sm mb-4">Streamlines operations, reliability, risk reduction with practical and business‑minded approach.</p>
+              <div class="text-xs text-light-gray">
+                  <p>Data Management</p>
+                  <p>Network Engineering</p>
+                  <p>System Security</p>
+              </div>
+          </div>
+          
+          <div class="bg-charcoal p-6 rounded-lg text-center">
+              <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-3.jpg" alt="Ardian Krasniqi" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+              <h3 class="font-semibold text-xl mb-2">Ardian Krasniqi</h3>
+              <p class="text-primary mb-4">Infrastructure &amp; Security Lead</p>
+              <p class="text-light-gray text-sm mb-4">Designs resilient environments and pragmatic security programs supporting growth and compliance.</p>
+              <div class="text-xs text-light-gray">
+                  <p>Cybersecurity</p>
+                  <p>Cloud Architecture</p>
+                  <p>Disaster Recovery</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
 
-        <!-- Why SCARDUS TECH section -->
-        <section id="why" class="why">
-            <div class="container">
-                <div>
-                    <h2 class="gradient-text">Why SCARDUS TECH?</h2>
-                    <p class="section-subtitle">Outcomes over outputs. Secure, reliable, and measurable delivery across your IT landscape.</p>
-                    <ul class="why-list">
-                        <li class="why-item"><strong>Reliability</strong><br>Architectures and processes that reduce downtime and risk.</li>
-                        <li class="why-item"><strong>Security & Compliance</strong><br>NIST SP 800‑171 implementation and CMMC readiness.</li>
-                        <li class="why-item"><strong>Automation</strong><br>Modernize workflows with orchestration and intelligent tooling.</li>
-                        <li class="why-item"><strong>Partner Mindset</strong><br>Transparent collaboration focused on your mission.</li>
-                    </ul>
-                </div>
-                <div class="ceo-card">
-                    <h3>Message from the SCARDUS TEAM</h3>
-                    <p>
-                        At SCARDUS TECH, we believe trust is earned through consistent delivery. Our team brings pragmatic
-                        engineering, clear communication, and a bias for action to every engagement — from helpdesk to cloud and
-                        cybersecurity. We meet you where you are and help you get where you need to go.
-                    </p>
-                    <div style="margin-top: 0.75rem;">
-                        <a class="btn btn-primary" href="#contact">Start a Conversation</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- Contact Section -->
+<section id="contact" class="bg-charcoal py-20 scroll-mt-24">
+  <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-16">Get In Touch</h2>
+      
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="glass-card p-8 rounded-lg">
+              <form class="space-y-6">
+                  <div>
+                      <label class="block text-sm font-medium mb-2">Name</label>
+                      <input type="text" class="w-full bg-dark/50 border border-primary/30 rounded-lg px-4 py-3 focus:outline-none focus:border-primary" placeholder="Your name">
+                  </div>
+                  <div>
+                      <label class="block text-sm font-medium mb-2">Email</label>
+                      <input type="email" class="w-full bg-dark/50 border border-primary/30 rounded-lg px-4 py-3 focus:outline-none focus:border-primary" placeholder="your@email.com">
+                  </div>
+                  <div>
+                      <label class="block text-sm font-medium mb-2">Message</label>
+                      <textarea rows="4" class="w-full bg-dark/50 border border-primary/30 rounded-lg px-4 py-3 focus:outline-none focus:border-primary" placeholder="Tell us about your project..."></textarea>
+                  </div>
+                  <button type="submit" class="w-full bg-primary hover:bg-blue-600 text-white py-3 rounded-lg font-semibold transition-all">
+                      Send Message
+                  </button>
+              </form>
+          </div>
+          
+          <div class="text-center">
+              <img class="w-64 h-64 mx-auto mb-8" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/455e29f66a-ca2a1455eda5042363ae.png" alt="email illustration, modern minimalist style, floating animation elements">
+              <h3 class="text-2xl font-semibold mb-4">Let's Build Something Great</h3>
+              <p class="text-light-gray">Ready to discuss your IT challenges? We're here to help.</p>
+          </div>
+      </div>
+  </div>
+</section>
 
-        <!-- CTA strip -->
-        <section class="cta-strip">
-            <div class="container">
-                <h3>Ready to accelerate your IT operations?</h3>
-                <p>Let’s align on your goals and build a secure, automated, and resilient foundation together.</p>
-                <div class="hero-ctas" style="margin-top: 0.5rem;">
-                    <a class="btn btn-secondary" href="#services">Explore Services</a>
-                </div>
-            </div>
-        </section>
+<!-- Footer -->
+<footer id="footer" class="bg-dark border-t border-charcoal py-12">
+  <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-3 gap-8">
+          <div class="flex items-center space-x-3">
+              <img class="w-10 h-10" src="{{ url_for('static', filename='ScardusLogo.png') }}" alt="Scardus Tech Logo">
+              <span class="text-xl font-bold">SCARDUS TECH</span>
+          </div>
+          
+          <div class="text-center">
+              <p class="text-light-gray mb-2">info@scardustech.com</p>
+              <p class="text-light-gray mb-2">M2 road, Ferizaj - Kacanik, 70000</p>
+              <p class="text-light-gray text-sm">© 2025 SCARDUS TECH. All rights reserved.</p>
+          </div>
+          
+          <div class="flex justify-center lg:justify-end space-x-4">
+              <span class="text-light-gray hover:text-primary transition-colors cursor-pointer">
+                  <i class="fa-brands fa-linkedin text-xl"></i>
+              </span>
+              <span class="text-light-gray hover:text-primary transition-colors cursor-pointer">
+                  <i class="fa-brands fa-twitter text-xl"></i>
+              </span>
+              <span class="text-light-gray hover:text-primary transition-colors cursor-pointer">
+                  <i class="fa-brands fa-github text-xl"></i>
+              </span>
+          </div>
+      </div>
+  </div>
+</footer>
 
-        <section id="team" class="team">
-            <div class="container">
-                <h2>Our Team</h2>
-                <div class="team-grid">
-                    <!-- Team Member 1 -->
-                    <div class="team-member">
-                        <div class="member-image">
-                            <img src="team-silhouette.svg" alt="Team Member silhouette" class="team-photo">
-                        </div>
-                        <div class="member-info">
-                            <h3>Agim Ukshini</h3>
-                            <p class="position">Management</p>
-                            <p class="bio">
-                                Agim leads our delivery with a clear focus on business results. Over the last 16 years he has guided
-                                complex IT programs in challenging environments, aligning technology decisions with measurable outcomes
-                                for stakeholders. Clients value his calm leadership, clear communication, and ability to move initiatives
-                                from plan to impact — on time and on budget.
-                            </p>
-                            <div class="credentials">
-                
-                            </div>
-                            <div class="specialties">
-                                <h4>Core Competencies:</h4>
-                                <div class="competency-tags">
-                                    <span class="skill-tag">Cross-Functional Team Leadership</span>
-                                    <span class="skill-tag">Program Management</span>
-                                    <span class="skill-tag">Infrastructure Deployment</span>
-                                    <span class="skill-tag">Change Management</span>
-                                    <span class="skill-tag">Quality Assurance</span>
-                                </div>
-        
-                            </div>
-                        </div>
-                    </div>
+<!-- Project Modal -->
+<div id="project-modal" class="fixed inset-0 bg-black/80 z-50 hidden flex items-center justify-center p-4">
+  <div class="bg-charcoal rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+      <div class="p-6 border-b border-primary/30 flex justify-between items-center">
+          <h3 id="modal-title" class="text-xl font-semibold"></h3>
+          <button onclick="closeModal()" class="text-light-gray hover:text-white">
+              <i class="fa-solid fa-times text-xl"></i>
+          </button>
+      </div>
+      <div class="p-6">
+          <div id="modal-content"></div>
+      </div>
+  </div>
+</div>
 
-                    <!-- Team Member 2 -->
-                    <div class="team-member">
-                        <div class="member-image">
-                            <img src="team-silhouette.svg" alt="Team Member silhouette" class="team-photo">
-                        </div>
-                        <div class="member-info">
-                            <h3>Avni Ademi</h3>
-                            <p class="position">Senior DevOps</p>
-                            <p class="bio">
-                                Avni turns transformation goals into stable, scalable reality. He partners with teams to streamline
-                                operations, improve reliability, and reduce risk — from day‑to‑day support to cloud and automation
-                                programs. His approach is practical and business‑minded: start with what matters, deliver value fast,
-                                and keep improving.
-                            </p>
-                            <div class="member-skills">
-                                <span class="skill-tag">Data Management</span>
-                                <span class="skill-tag">Network Engineering</span>
-                                <span class="skill-tag">System Security</span>
-                                <span class="skill-tag">Python</span>
-                                <span class="skill-tag">.NET</span>
-                            </div>
-                        </div>
-                    </div>
+<script>
+// Mobile menu toggle
+document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+  const menu = document.getElementById('mobile-menu');
+  menu.classList.toggle('hidden');
+});
 
-                    <!-- Team Member 3 -->
-                    <div class="team-member">
-                        <div class="member-image">
-                            <img src="team-silhouette.svg" alt="Team Member silhouette" class="team-photo">
-                        </div>
-                        <div class="member-info">
-                            <h3>Ardian Krasniqi</h3>
-                            <p class="position">Infrastructure & Security Lead</p>
-                            <p class="bio">
-                                Ardian helps organizations operate with confidence. He designs resilient environments and pragmatic
-                                security programs that support growth, compliance, and everyday productivity. Colleagues appreciate his
-                                collaborative style and clear guidance from strategy through execution.
-                            </p>
-                            <div class="member-skills">
-                                <span class="skill-tag">Cybersecurity</span>
-                                <span class="skill-tag">Cloud Architecture</span>
-                                <span class="skill-tag">Infrastructure Design</span>
-                                <span class="skill-tag">Disaster Recovery</span>
-                                <span class="skill-tag">Compliance</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact section (moved to bottom) -->
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2>How can we help you?</h2>
-                <div class="contact-grid">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        <button type="submit" class="cta-button">Send Message</button>
-                    </form>
-                    <!-- Mail animation on the right -->
-                    <div class="contact-visual" aria-hidden="true">
-                        <svg class="mail-illustration" viewBox="0 0 200 200" role="img" focusable="false">
-                            <defs>
-                                <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stop-color="#dbeafe"/>
-                                    <stop offset="100%" stop-color="#e0e7ff"/>
-                                </linearGradient>
-                            </defs>
-                            <!-- Soft background blob -->
-                            <circle cx="100" cy="100" r="70" fill="url(#grad)" opacity="0.8"></circle>
-                            <!-- Envelope -->
-                            <g class="mail-float">
-                                <rect x="50" y="70" width="100" height="60" rx="8" fill="#2563eb" opacity="0.95"></rect>
-                                <path d="M50 80 L100 115 L150 80" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
-                                <path d="M50 70 L100 105 L150 70" fill="none" stroke="#93c5fd" stroke-width="2" opacity="0.85"/>
-                            </g>
-                            <!-- Subtle sparkles -->
-                            <g class="sparkles">
-                                <circle cx="150" cy="60" r="3" fill="#60a5fa"/>
-                                <circle cx="40" cy="120" r="2" fill="#a78bfa"/>
-                                <circle cx="130" cy="150" r="2.5" fill="#22d3ee"/>
-                            </g>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <img src="ScardusLogo.png" alt="Scardus Tech Logo" class="company-logo footer-logo">
-                    <span>SCARDUS TECH</span>
-                </div>
-                <div class="footer-info">
-                    <p>Email: <a href="mailto:info@scardustech.com">info@scardustech.com</a></p>
-                    <p>Address: M2 road, Ferizaj - Kacanik<br>70000</p>
-                    <p>&copy; 2025 SCARDUS TECH. All rights reserved.</p>
-                </div>
-                <div class="social-links">
-                    <a href="#" aria-label="LinkedIn"><svg class="social-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.68 1.68 0 0 0-1.68 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg></a>
-                    <a href="#" aria-label="Twitter"><svg class="social-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/></svg></a>
-                    <a href="#" aria-label="GitHub"><svg class="social-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg></a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="animations.js"></script>
-    <script>
-        // Project data - this would typically come from your backend
-        const projectsData = {
-            1: {
-                title: "Enterprise Resource Management",
-                category: "Software Development",
-                description: `
-                    <p>A comprehensive ERP solution designed and implemented for a leading manufacturing company. 
-                    The system includes modules for inventory management, production planning, and real-time analytics.</p>
-                    <p>Key achievements:</p>
-                    <ul>
-                        <li>40% reduction in inventory management time</li>
-                        <li>Real-time production monitoring</li>
-                        <li>Integrated BI dashboard for executive decisions</li>
-                    </ul>
-                `,
-                duration: "8 months",
-                teamSize: "6 developers",
-                completion: "2024",
-                files: [
-                    { name: "Project Overview.pdf", size: "2.4 MB" },
-                    { name: "Technical Documentation.pdf", size: "5.1 MB" },
-                    { name: "User Manual.pdf", size: "3.7 MB" }
-                ]
-            },
-            // Add more project data as needed
-        };
-
-        // Modal handling
-        const modal = document.getElementById('projectModal');
-        const closeBtn = document.querySelector('.close-modal');
-
-        function openProjectDetails(projectId) {
-            const project = projectsData[projectId];
-            if (!project) return;
-
-            // Populate modal content
-            document.getElementById('modalTitle').textContent = project.title;
-            document.getElementById('modalCategory').textContent = project.category;
-            document.getElementById('modalDescription').innerHTML = project.description;
-            document.getElementById('modalDuration').textContent = project.duration;
-            document.getElementById('modalTeamSize').textContent = project.teamSize;
-            document.getElementById('modalCompletion').textContent = project.completion;
-
-            // Populate files list
-            const filesList = document.getElementById('filesList');
-            filesList.innerHTML = project.files.map(file => `
-                <div class="file-item">
-                    <div class="file-name">
-                        <svg class="file-icon" viewBox="0 0 24 24" width="20" height="20">
-                            <path fill="currentColor" d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
-                        </svg>
-                        ${file.name}
-                        <span class="file-size">${file.size}</span>
-                    </div>
-                    <div class="file-actions">
-                        <button class="modern-button" onclick="downloadFile('${file.name}')">Download</button>
-                    </div>
-                </div>
-            `).join('');
-
-            // Show modal
-            modal.classList.add('active');
-        }
-
-        // Close modal
-        closeBtn.onclick = function() {
-            modal.classList.remove('active');
-        }
-
-        window.onclick = function(event) {
-            if (event.target === modal) {
-                modal.classList.remove('active');
-            }
-        }
-
-        // File upload handling
-        document.getElementById('projectFile').addEventListener('change', handleFileUpload);
-
-        function handleFileUpload(event) {
-            const files = event.target.files;
-            if (!files.length) return;
-
-            // Here you would typically send the files to your backend
-            // For demonstration, we'll just show a success message
-            alert(`${files.length} file(s) selected for upload. In a real implementation, these would be sent to your backend storage.`);
-        }
-
-        function downloadFile(fileName) {
-            // Here you would typically trigger a download from your backend
-            alert(`Downloading ${fileName}. In a real implementation, this would fetch the file from your backend storage.`);
-        }
-    </script>
-    <script>
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-            this.classList.toggle('active');
-        });
-
-        // Services dropdown toggle for mobile
-        document.querySelector('.services-dropdown > a').addEventListener('click', function(e) {
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                this.parentElement.classList.toggle('active');
-            }
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                if (!this.closest('.services-dropdown') || window.innerWidth > 768) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
             });
-        });
+        }
+    });
+});
 
-        // Form submission handler
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Add your form submission logic here
-            alert('Thank you for your message! We will get back to you soon.');
-            this.reset();
-        });
-    </script>
-</body>
-</html>
+// Close mobile menu when a link is clicked
+document.querySelectorAll('#mobile-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.add('hidden');
+  });
+});
+
+// Project modal functions
+function openModal(projectId) {
+  const title = document.getElementById('modal-title');
+  const content = document.getElementById('modal-content');
+  
+  const projects = {
+      'project1': {
+          title: 'ERP, minus the headaches',
+          category: 'Enterprise Software',
+          description: 'Complete ERP system overhaul that streamlined operations and eliminated manual processes. Planning got sharper without 12 spreadsheets.',
+          stats: ['50% reduction in processing time', '99.9% uptime achieved', '200+ users onboarded'],
+          tech: ['.NET Core', 'React', 'SQL Server', 'Azure DevOps']
+      },
+      'project2': {
+          title: 'Cloud migration, no drama',
+          category: 'Cloud Migration',
+          description: 'Seamless migration to AWS with zero downtime. Secure landing zone implementation that reduced operational overhead.',
+          stats: ['Zero downtime migration', '40% cost reduction', 'Enhanced security posture'],
+          tech: ['AWS', 'Docker', 'Kubernetes', 'Terraform']
+      },
+      'project3': {
+          title: 'Help desk that actually helps',
+          category: 'IT Support',
+          description: '24/7 support system with clear SLAs that works even on Mondays. Comprehensive ITIL-based service management.',
+          stats: ['<2 min response time', '95% first-call resolution', '99% satisfaction rating'],
+          tech: ['ServiceNow', 'ITIL', 'Power BI', 'Teams Integration']
+      }
+  };
+  
+  const project = projects[projectId];
+  if (project) {
+      title.textContent = project.title;
+      content.innerHTML = `
+          <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm mb-4 inline-block">${project.category}</span>
+          <p class="text-light-gray mb-6">${project.description}</p>
+          <h4 class="font-semibold mb-3">Key Results:</h4>
+          <ul class="text-light-gray mb-6 space-y-1">
+              ${project.stats.map(stat => `<li>• ${stat}</li>`).join('')}
+          </ul>
+          <h4 class="font-semibold mb-3">Technologies:</h4>
+          <div class="flex flex-wrap gap-2">
+              ${project.tech.map(tech => `<span class="bg-dark px-3 py-1 rounded text-sm">${tech}</span>`).join('')}
+          </div>
+      `;
+      modal.classList.remove('hidden');
+  }
+}
+
+function closeModal() {
+  document.getElementById('project-modal').classList.add('hidden');
+}
+
+// Close modal on outside click
+document.getElementById('project-modal').addEventListener('click', function(e) {
+  if (e.target === this) {
+      closeModal();
+  }
+});
+</script>
+
+
+</body></html>
