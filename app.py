@@ -4,7 +4,7 @@ from flask import Flask, render_template, send_from_directory, abort, request
 from werkzeug.middleware.proxy_fix import ProxyFix
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
-from talisman import Talisman
+from flask_talisman import Talisman
 
 # App factory
 app = Flask(__name__, static_folder='static', template_folder='templates')
