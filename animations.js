@@ -218,20 +218,22 @@ const loadingController = new LoadingController();
 
     // Generate nodes with clustered positions for a neural-net feel
     const NODE_COUNT = 36;
+    // Center clusters more toward the middle of the hero
     const clusters = [
-        { cx: width * 0.25, cy: height * 0.35 },
-        { cx: width * 0.55, cy: height * 0.5 },
-        { cx: width * 0.82, cy: height * 0.35 }
+        { cx: width * 0.38, cy: height * 0.42 },
+        { cx: width * 0.50, cy: height * 0.50 },
+        { cx: width * 0.62, cy: height * 0.42 }
     ];
 
     const nodes = Array.from({ length: NODE_COUNT }, (_, i) => {
         const c = clusters[i % clusters.length];
-        const jitterX = (Math.random() - 0.5) * 180;
-        const jitterY = (Math.random() - 0.5) * 140;
+        // Reduced jitter to keep nodes near center
+        const jitterX = (Math.random() - 0.5) * 120;
+        const jitterY = (Math.random() - 0.5) * 100;
         return {
             id: i,
-            x: Math.max(20, Math.min(width - 20, c.cx + jitterX)),
-            y: Math.max(20, Math.min(height - 20, c.cy + jitterY))
+            x: Math.max(width * 0.2, Math.min(width * 0.8, c.cx + jitterX)),
+            y: Math.max(height * 0.2, Math.min(height * 0.8, c.cy + jitterY))
         };
     });
 
@@ -329,6 +331,101 @@ const loadingController = new LoadingController();
     setTimeout(pulseNodes, 2200);
 })();
 
+// ======================================
+// Global Background Network (site-wide)
+// ======================================
+(function initGlobalNetwork() {
+    const svg = document.getElementById('globalNetwork');
+    if (!svg) return;
+
+    const NS = 'http://www.w3.org/2000/svg';
+
+    // container groups
+    const linksGroup = document.createElementNS(NS, 'g');
+    const nodesGroup = document.createElementNS(NS, 'g');
+    svg.appendChild(linksGroup);
+    svg.appendChild(nodesGroup);
+
+    function buildNetwork() {
+        // cleanup previous
+        while (linksGroup.firstChild) linksGroup.removeChild(linksGroup.firstChild);
+        while (nodesGroup.firstChild) nodesGroup.removeChild(nodesGroup.firstChild);
+
+        const width = svg.viewBox.baseVal.width || 1200;
+        const height = Math.max(document.body.scrollHeight, window.innerHeight);
+        svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+
+        // Sparser nodes per vertical slice
+        const sliceCount = Math.ceil(height / 600);
+        const nodesPerSlice = 18; // keep subtle
+        const nodes = [];
+
+        for (let s = 0; s < sliceCount; s++) {
+            const yStart = s * (height / sliceCount);
+            for (let i = 0; i < nodesPerSlice; i++) {
+                const x = width * 0.2 + Math.random() * (width * 0.6);
+                const y = yStart + Math.random() * (height / sliceCount);
+                nodes.push({ id: nodes.length, x, y });
+            }
+        }
+
+        // connect to nearest neighbors
+        function distance(a, b) {
+            const dx = a.x - b.x; const dy = a.y - b.y; return Math.hypot(dx, dy);
+        }
+        const links = [];
+        nodes.forEach((n, idx) => {
+            const neighbors = nodes
+                .map((m, j) => ({ j, d: idx === j ? Infinity : distance(n, m) }))
+                .sort((a, b) => a.d - b.d)
+                .slice(0, 2 + Math.floor(Math.random() * 2));
+            neighbors.forEach(nb => { if (idx < nb.j) links.push({ a: idx, b: nb.j }); });
+        });
+
+        const linkEls = links.map(({ a, b }) => {
+            const la = nodes[a], lb = nodes[b];
+            const line = document.createElementNS(NS, 'line');
+            line.setAttribute('x1', la.x);
+            line.setAttribute('y1', la.y);
+            line.setAttribute('x2', lb.x);
+            line.setAttribute('y2', lb.y);
+            line.setAttribute('class', 'link');
+            linksGroup.appendChild(line);
+            return line;
+        });
+
+        const nodeEls = nodes.map(n => {
+            const c = document.createElementNS(NS, 'circle');
+            c.setAttribute('cx', n.x);
+            c.setAttribute('cy', n.y);
+            c.setAttribute('r', 3);
+            c.setAttribute('class', 'node');
+            nodesGroup.appendChild(c);
+            return c;
+        });
+
+        // soft cascading activation
+        function animateSignal() {
+            if (!document.body.contains(svg)) return;
+            linkEls.forEach(l => l.classList.remove('active'));
+            let i = Math.floor(Math.random() * linkEls.length);
+            for (let h = 0; h < 10; h++) {
+                setTimeout(() => linkEls[(i + h) % linkEls.length].classList.add('active'), h * 100);
+            }
+            setTimeout(animateSignal, 2400 + Math.random() * 1200);
+        }
+
+        animateSignal();
+    }
+
+    // build once and on resize/route height changes
+    buildNetwork();
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(buildNetwork, 250);
+    }, { passive: true });
+})();
 // =============================
 // Additional Hero Tech Animations
 // - Circuit board traces (pulsing paths)
@@ -370,19 +467,21 @@ const loadingController = new LoadingController();
     const TRACE_COUNT = 10;
     const traceEls = [];
     for (let i = 0; i < TRACE_COUNT; i++) {
-        // Random start/end zones to mimic board routes
-        const yBase = 80 + Math.random() * (height - 160);
+        // Centralize traces within a middle band
+        const yBase = height * 0.3 + Math.random() * (height * 0.4);
         const segments = 6 + Math.floor(Math.random() * 4);
         const pts = [];
-        let x = 40 + Math.random() * 120;
+        let x = width * 0.28 + Math.random() * (width * 0.12); // start near center-left
         let y = yBase;
         pts.push({ x, y });
         for (let s = 0; s < segments; s++) {
             // horizontal segment
-            x += 120 + Math.random() * 120;
+            x += 80 + Math.random() * 90; // shorter runs to keep within center band
+            if (x > width * 0.78) x = width * 0.78; // cap near center-right
             pts.push({ x, y });
             // small jog
-            y += (Math.random() - 0.5) * 40;
+            y += (Math.random() - 0.5) * 30;
+            y = Math.max(height * 0.28, Math.min(height * 0.72, y));
             pts.push({ x, y });
         }
         const path = document.createElementNS(NS, 'path');
@@ -461,9 +560,9 @@ const loadingController = new LoadingController();
     }
 
     function drawWaves(t) {
-        const baseX = width * 0.6;
-        const baseY = height * 0.18;
-        const w = 420;
+        const baseX = width * 0.48; // move waves closer to center
+        const baseY = height * 0.22;
+        const w = 360; // slightly narrower
         waves.forEach((wobj, idx) => {
             const pts = [];
             for (let x = 0; x <= w; x += 12) {

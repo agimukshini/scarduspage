@@ -5,6 +5,29 @@
     box-sizing: border-box;
 }
 
+/* Global animated background layer */
+.global-background {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+header, main, footer { position: relative; z-index: 1; }
+
+/* Global network visuals (subtle) */
+#globalNetwork .node {
+    fill: #60a5fa;
+    opacity: 0.35;
+}
+
+#globalNetwork .link {
+    stroke: rgba(148, 163, 184, 0.16);
+    stroke-width: 1;
+}
+
+#globalNetwork .link.active { stroke: rgba(96,165,250,0.5); }
+
 :root {
     /* Modern Tech Company Color Palette */
     --primary-color: #2563eb;      /* Modern blue */
@@ -18,6 +41,7 @@
     --text-light: #6b7280;         /* Medium grey */
     --text-lighter: #9ca3af;       /* Light grey */
     --background: #ffffff;         /* Pure white */
+    --white: #ffffff;              /* White (explicit) */
     --background-light: #f9fafb;   /* Off white */
     --background-dark: #f3f4f6;    /* Light grey bg */
     --border-color: #e5e7eb;       /* Border grey */
@@ -30,26 +54,30 @@
     --border-radius: 0.5rem;
     --border-radius-lg: 0.75rem;
     --border-radius-xl: 1rem;
+    /* RGB triplet for translucency */
+    --primary-color-rgb: 37, 99, 235;
     
     /* Typography Scale */
     --font-size-xs: 0.75rem;     /* 12px */
-    --font-size-sm: 0.875rem;    /* 14px */
     --font-size-base: 1rem;      /* 16px */
     --font-size-md: 1.125rem;    /* 18px */
     --font-size-lg: 1.25rem;     /* 20px */
     --font-size-xl: 1.5rem;      /* 24px */
     --font-size-2xl: 1.875rem;   /* 30px */
-    --font-size-3xl: 2.25rem;    /* 36px */
+    --font-size-3xl: 2.25rem;   /* 36px */
 }
 
-body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--background);
-    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+/* Theme: apply hero-like dark palette sitewide when enabled */
+body.theme-hero {
+    /* Bright, human-friendly light theme while keeping animations */
+    --background: #ffffff;
+    --background-light: #f9fafb;  /* subtle section background */
+    --background-dark: #f3f4f6;   /* cards/alternating strips */
+    --text-color: #111827;        /* near-black for readability */
+    --text-light: #4b5563;        /* muted body text */
+    --text-lighter: #6b7280;      /* captions */
+    --border-color: #e5e7eb;      /* light borders */
+    --primary-light: #dbeafe;     /* light primary tint */
 }
 
 .container {
@@ -60,7 +88,7 @@ body {
 
 /* Header styles */
 #header {
-    background: var(--primary-light); /* light brand tint */
+    background: rgba(255, 255, 255, 0.85); /* light glass on theme */
     box-shadow: 0 2px 4px rgba(0,0,0,0.08);
     border-bottom: 1px solid var(--border-color);
     position: fixed;
@@ -176,28 +204,25 @@ nav {
 /* Hero section */
 .hero {
     padding: clamp(100px, 15vh, 140px) 0 clamp(60px, 10vh, 100px);
-    background: linear-gradient(135deg, var(--background-light) 0%, var(--background) 100%);
+    background: var(--background-light);
     position: relative;
-    text-align: center;
-    overflow: hidden;
 }
 
-/* High contrast theme for hero */
-.hero-contrast {
-    color: #fff;
-    background: radial-gradient(1200px 600px at 80% 0%, #0b1220 0%, #0a1224 40%, #070e1a 100%);
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-color);
+    letter-spacing: -0.01em;
 }
 
-.hero-contrast .hero-title {
+.hero h1 {
     font-size: clamp(2rem, 5vw, 3.25rem);
     font-weight: 800;
     line-height: 1.1;
     letter-spacing: -0.02em;
-    color: #fff;
+    color: var(--text-color);
 }
 
 .hero-contrast .hero-subtitle {
-    color: #d1d5db;
+    color: var(--text-light);
     font-size: clamp(1rem, 2.2vw, 1.125rem);
     max-width: 760px;
     margin: 0.75rem auto 1.25rem;
@@ -304,19 +329,7 @@ nav {
     }
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 40% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 50%);
-    z-index: 1;
-}
+.hero::before { content: none; }
 
 .hero .container {
     position: relative;
@@ -337,6 +350,59 @@ nav {
     color: var(--text-light);
     max-width: 600px;
     margin: 0 auto 2rem;
+}
+
+/* Gradient emphasis text similar to CodeIQ */
+.gradient-text {
+    background: none !important;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    color: var(--primary-color) !important;
+}
+
+/* Hero CTA buttons */
+.hero-ctas {
+    display: inline-flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background: #2563eb;
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    background: #1e40af;
+    box-shadow: 0 12px 24px rgba(37, 99, 235, 0.45);
+}
+
+.btn-secondary {
+    background: rgba(255,255,255,0.06);
+    color: #e5e7eb;
+    border-color: rgba(255,255,255,0.16);
+    backdrop-filter: blur(6px);
+}
+
+.btn-secondary:hover {
+    background: rgba(255,255,255,0.12);
+    transform: translateY(-2px);
 }
 
 /* Trust narrative styles */
@@ -369,7 +435,7 @@ nav {
     padding: 0.85rem 1rem;
     border: 1px dashed var(--border-color);
     border-radius: var(--border-radius);
-    background: linear-gradient(135deg, var(--primary-light), var(--background));
+    background: var(--background);
 }
 
 .badge-title {
@@ -387,7 +453,7 @@ nav {
 .compliance-note {
     padding: 0.75rem 1rem;
     border-radius: var(--border-radius);
-    background: linear-gradient(90deg, var(--accent-light), var(--primary-light));
+    background: var(--background-light);
     color: var(--text-color);
     border: 1px solid var(--border-color);
 }
@@ -448,6 +514,69 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* Framed image treatment (Codetiq-inspired) */
+.about-photo-frame {
+    position: relative;
+    width: 100%;
+    max-width: 560px;
+    aspect-ratio: 4 / 3;
+    border-radius: 16px;
+    padding: 12px;
+    background: rgba(255,255,255,0.06);
+    box-shadow: 0 20px 60px rgba(2,6,23,0.25), inset 0 1px 0 rgba(255,255,255,0.06);
+    overflow: hidden;
+}
+
+.about-photo-frame .frame-blob {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    left: -40px;
+    top: -40px;
+    background: none;
+    filter: blur(12px);
+    pointer-events: none;
+}
+
+.about-photo-frame .frame-ring {
+    position: absolute;
+    right: -60px;
+    bottom: -60px;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    border: 2px solid rgba(96,165,250,0.35);
+    box-shadow: 0 0 80px rgba(96,165,250,0.3) inset;
+    pointer-events: none;
+}
+
+.about-photo-frame .frame-dots {
+    position: absolute;
+    inset: 0;
+    background-image: none;
+    background-size: 12px 12px;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.about-photo-frame .frame-shine {
+    position: absolute;
+    inset: 0;
+    background: none;
+    mix-blend-mode: screen;
+    pointer-events: none;
+}
+
+.about-photo {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 12px;
+    background: var(--white);
+    box-shadow: 0 10px 30px rgba(2,6,23,0.15);
 }
 
 .about-mountain {
@@ -519,8 +648,8 @@ nav {
     100% { transform: scale(0.8); opacity: 0.4; }
 }
 
-.about-content {
-    text-align: right; /* per request: align text on the right side */
+body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
 .about-content h2 {
@@ -556,12 +685,15 @@ nav {
 .info-card h3 {
     margin-bottom: 0.75rem;
     color: var(--primary-dark);
+    font-weight: 700;
 }
 
 .info-card .services-list li {
     background: transparent;
     border-radius: 6px;
-    padding: 0.5rem 0.5rem;
+    padding: 0.6rem 0.6rem;
+    font-size: var(--font-size-base);
+    line-height: 1.7;
 }
 
 .info-card .services-list strong {
@@ -619,41 +751,64 @@ nav {
 }
 
 .services-list li:hover {
-    transform: translateX(10px);
+    transform: translateX(4px);
 }
 
 .services-list strong {
     display: block;
     color: var(--primary-color);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.35rem;
     font-size: var(--font-size-md);
+    font-weight: 700;
 }
 
 .why-choose-us p {
     font-size: var(--font-size-md);
-    line-height: 1.8;
-    color: var(--text-light);
 }
 
 @media (max-width: 900px) {
-    .about-grid {
+    .contact-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 2rem;
     }
-    .about-content,
-    .about-content h2,
-    .about-content .about-intro p,
-    .about-content .why-choose-us p {
-        text-align: left; /* better readability on narrow screens */
-    }
-    .about-visual {
-        order: -1; /* show visual first on mobile */
+    #contactForm {
+        max-width: 100%; /* full width on mobile */
     }
 }
 
-@media (max-width: 768px) {
-    .about-next {
-        grid-template-columns: 1fr;
+/* Two-column layout for contact section on wider screens */
+@media (min-width: 901px) {
+    .contact-grid {
+        grid-template-columns: minmax(0, 700px) minmax(0, 1fr); /* wider form | visual */
+        column-gap: 3rem;
+        align-items: start; /* keep tops aligned */
+    }
+    .contact-visual {
+        width: 100%;
+        max-width: 420px;
+        justify-self: center;
+    }
+    .mail-illustration {
+        width: 100%;
+        height: auto;
+        filter: drop-shadow(0 10px 20px rgba(2,6,23,0.12));
+    }
+    .mail-float {
+        animation: mailFloat 3.6s ease-in-out infinite;
+        transform-origin: 100px 100px;
+    }
+    @keyframes mailFloat {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+    }
+    .sparkles circle {
+        animation: sparkle 2.8s ease-in-out infinite;
+    }
+    .sparkles circle:nth-child(2) { animation-delay: 0.6s; }
+    .sparkles circle:nth-child(3) { animation-delay: 1.2s; }
+    @keyframes sparkle {
+        0%, 100% { opacity: 0.4; transform: scale(0.9); }
+        50% { opacity: 1; transform: scale(1.05); }
     }
 }
 
@@ -693,7 +848,7 @@ nav {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, var(--primary-color), var(--accent-color), var(--secondary-color));
+    background: var(--primary-color);
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -721,8 +876,85 @@ nav {
 
 .projects h2 {
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
+    font-size: var(--font-size-2xl);
+}
+
+/* Smaller subtitle only in projects */
+.projects .section-subtitle {
+    font-size: var(--font-size-sm);
+    margin-bottom: 1.5rem;
+}
+
+/* Why SCARDUS / CEO message section */
+.why {
+    padding: 80px 0;
+    background: var(--background);
+}
+
+.why .container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: clamp(1rem, 4vw, 3rem);
+    align-items: start;
+}
+
+.why h2 {
     font-size: var(--font-size-3xl);
+    margin-bottom: 1rem;
+    color: var(--primary-dark);
+}
+
+.ceo-card {
+    background: var(--background);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow);
+    padding: clamp(1rem, 3vw, 1.5rem);
+}
+
+.why-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.why-item {
+    background: var(--background-light);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 0.85rem 1rem;
+}
+
+.why-item strong {
+    color: var(--primary-color);
+}
+
+@media (max-width: 900px) {
+    .why .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* CTA strip */
+.cta-strip {
+    background: var(--background-dark);
+    color: var(--text-color);
+    padding: 48px 0;
+    text-align: center;
+}
+
+.cta-strip h3 {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.cta-strip p {
+    color: var(--text-light);
+    margin: 0 auto 1rem;
+    max-width: 720px;
 }
 
 .section-subtitle {
@@ -735,7 +967,7 @@ nav {
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: 1.25rem;
     padding: 1rem;
 }
 
@@ -748,7 +980,7 @@ nav {
 
 .project-image {
     position: relative;
-    height: 200px;
+    height: 160px;
     overflow: hidden;
 }
 
@@ -771,24 +1003,25 @@ nav {
     color: var(--white);
     padding: 0.5rem 1rem;
     border-radius: 20px;
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     backdrop-filter: blur(4px);
 }
 
 .project-content {
-    padding: 1.5rem;
+    padding: 1.25rem;
 }
 
 .project-content h3 {
     color: var(--primary-dark);
-    margin-bottom: 0.5rem;
-    font-size: var(--font-size-lg);
+    margin-bottom: 0.4rem;
+    font-size: var(--font-size-md);
 }
 
 .project-content p {
     color: var(--text-light);
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     font-size: var(--font-size-sm);
+    line-height: 1.55;
 }
 
 .project-tech {
@@ -809,7 +1042,7 @@ nav {
 
 .view-project-btn {
     width: 100%;
-    padding: 0.75rem;
+    padding: 0.6rem;
     background: var(--primary-color);
     color: var(--white);
     border: none;
@@ -1128,8 +1361,7 @@ nav {
     width: 100%;
     height: 300px;
     overflow: hidden;
-    /* Add subtle gradient background to emphasize silhouette */
-    background: linear-gradient(135deg, var(--primary-light), var(--accent-light));
+    background: var(--background-light);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1198,20 +1430,58 @@ img.team-photo[src$=".svg"]:hover {
 
 /* Contact section */
 .contact {
-    padding: 80px 0;
-    background: var(--white);
+    padding: clamp(80px, 12vh, 120px) 0;
+    background: var(--background-light);
 }
 
 .contact h2 {
-    text-align: center;
-    color: var(--primary-dark);
-    margin-bottom: 3rem;
+    text-align: left;
+    color: var(--text-color);
+    margin-bottom: 1rem;
 }
 
 .contact-grid {
     display: grid;
-    grid-template-columns: 3fr 2fr;
-    gap: 4rem;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    justify-items: start; /* align content to start by default */
+}
+
+/* Ensure two columns on desktop overriding earlier rules */
+@media (min-width: 901px) {
+    .contact-grid {
+        grid-template-columns: minmax(0, 720px) 1fr; /* wider form | visual */
+        column-gap: 3rem;
+        align-items: start;
+    }
+    /* Explicit column placement to keep items on the same row */
+    #contactForm { grid-column: 1; }
+    .contact-visual { grid-column: 2; align-self: start; justify-self: end; }
+    .contact-visual {
+        justify-self: end;
+        max-width: 420px;
+    }
+    .mail-illustration {
+        width: 100%;
+        height: auto;
+        max-height: 220px; /* prevent overly tall icon pushing layout */
+    }
+}
+
+/* Constrain contact form width and center within the section container */
+#contactForm {
+    width: 100%;
+    max-width: 720px; /* wider form on desktop */
+    background: rgba(255,255,255,0.06); /* glassy card on dark bg */
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    padding: clamp(1rem, 3vw, 1.25rem);
+    backdrop-filter: blur(6px);
+}
+
+/* Slightly smaller textarea height to reduce visual bulk */
+.form-group textarea {
+    height: 120px;
 }
 
 .form-group {
@@ -1221,7 +1491,8 @@ img.team-photo[src$=".svg"]:hover {
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
-    font-weight: 500;
+    font-weight: 600;
+    color: var(--text-color); /* ensure readable on light theme */
 }
 
 .form-group input,
@@ -1251,22 +1522,24 @@ img.team-photo[src$=".svg"]:hover {
 footer {
     background: var(--primary-light);
     color: var(--text-color);
-    padding: 1.5rem 0;
+    padding: 2rem 0;
     border-top: 1px solid var(--border-color);
 }
 
 .footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: auto minmax(0, 560px) auto; /* brand | constrained info | socials */
+    align-items: start;
     gap: 1rem;
+    justify-content: center; /* center the three columns within container */
 }
-
 .footer-brand {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-weight: 700;
+}
+
+.footer-brand {
     color: var(--primary-color);
 }
 
@@ -1275,9 +1548,46 @@ footer {
     width: auto;
 }
 
+.footer-info {
+    font-size: var(--font-size-sm);
+    width: 100%; /* fill the constrained middle column */
+    justify-self: start; /* align within grid cell */
+}
+
+.footer-info h3 {
+    margin-bottom: 0.5rem;
+    color: var(--primary-dark);
+}
+
+.footer-info p {
+    margin: 0.25rem 0;
+    font-size: var(--font-size-xs);
+    line-height: 1.3;
+    color: var(--text-light);
+}
+
+.footer-info a {
+    color: var(--text-color);
+    text-decoration: none;
+    border-bottom: 1px dotted transparent;
+}
+
+.footer-info a:hover {
+    color: var(--primary-dark);
+    border-bottom-color: var(--primary-dark);
+}
+
+/* Make footer info full width on smaller screens */
+@media (max-width: 900px) {
+    .footer-info {
+        width: 100%;
+    }
+}
+
 .social-links {
     display: flex;
     gap: 0.75rem;
+    align-items: center;
 }
 
 .social-icon {
@@ -1375,14 +1685,10 @@ footer {
     }
 
     .footer-content {
-        flex-direction: column;
-        gap: 0.75rem;
-        text-align: center;
-        background: var(--primary-light);
-        color: var(--text-color);
-        padding: 1.5rem 0;
-        border-top: 1px solid var(--border-color);
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
     }
+    
 
     .footer-brand {
         color: var(--primary-color);
@@ -1391,48 +1697,6 @@ footer {
     .footer-logo {
         height: 32px;
         width: auto;
-    }
-
-    .hero h1 {
-        font-size: clamp(1.75rem, 8vw, 2.5rem);
-    }
-    
-    .hero p {
-        font-size: var(--font-size-base);
-        padding: 0 1rem;
-    }
-
-    .trust-panel {
-        margin: 0 1rem;
-        padding: 1rem;
-    }
-
-    .trust-badges {
-        grid-template-columns: 1fr;
-    }
-    
-    .stats-container {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 1rem;
-        padding: 1rem 0;
-    }
-    
-    .stat-item {
-        padding: 1.5rem 1rem;
-    }
-
-    .service-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .service-card {
-        padding: 2rem;
-    }
-    
-    .projects-grid {
-        grid-template-columns: 1fr;
-        padding: 0;
     }
 }
 
@@ -1506,12 +1770,12 @@ footer {
 
 /* Gradient text effect */
 .gradient-text {
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    transition: all 0.3s ease;
+    background: none !important;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    color: var(--primary-color) !important;
 }
+
 
 /* Smooth scroll behavior */
 html {
@@ -1725,9 +1989,8 @@ a:focus {
 
 /* Loading skeleton for better UX */
 .skeleton {
-    background: linear-gradient(90deg, var(--background-dark) 25%, var(--background-light) 50%, var(--background-dark) 75%);
-    background-size: 200% 100%;
-    animation: loading 1.5s infinite;
+    background: var(--background-dark);
+    animation: none;
 }
 
 @keyframes loading {

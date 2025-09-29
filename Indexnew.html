@@ -1,0 +1,650 @@
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCARDUS TECH - Your Trusted Partner in IT Operations Excellence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <style>
+        ::-webkit-scrollbar { display: none; }
+        body { font-family: 'Inter', sans-serif; }
+        .network-bg {
+            background: linear-gradient(135deg, #000000 0%, #262626 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .network-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(65, 105, 225, 0.1) 1px, transparent 1px),
+                radial-gradient(circle at 80% 70%, rgba(65, 105, 225, 0.1) 1px, transparent 1px),
+                radial-gradient(circle at 40% 80%, rgba(65, 105, 225, 0.1) 1px, transparent 1px);
+            background-size: 100px 100px, 150px 150px, 120px 120px;
+            animation: networkFloat 20s infinite linear;
+        }
+        @keyframes networkFloat {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-20px, -20px); }
+        }
+        .glass-card {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+    <script>tailwind.config = {
+  "theme": {
+    "extend": {
+      "colors": {
+        "primary": "#4169E1",
+        "dark": "#000000",
+        "charcoal": "#262626",
+        "light-gray": "#D3D3D3",
+        "off-white": "#F8F8F8"
+      },
+      "fontFamily": {
+        "poppins": [
+          "Poppins",
+          "sans-serif"
+        ]
+      }
+    }
+  }
+};</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"><style>
+  .highlighted-section {
+    outline: 2px solid #3F20FB;
+    background-color: rgba(63, 32, 251, 0.1);
+  }
+
+  .edit-button {
+    position: absolute;
+    z-index: 1000;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  html, body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  </style></head>
+<body class="bg-dark text-white">
+
+<!-- Header -->
+<header id="header" class="fixed top-0 w-full z-50 bg-dark/90 backdrop-blur-md border-b border-charcoal">
+    <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+            <img class="w-10 h-10" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/5d58064a24-9e957f86163b498af211.png" alt="modern tech company logo with mountain elements, minimal design, blue and white colors">
+            <span class="text-xl font-bold text-white">SCARDUS TECH</span>
+        </div>
+        
+        <div class="hidden md:flex items-center space-x-8">
+            <span class="text-light-gray hover:text-white transition-colors cursor-pointer">Home</span>
+            <span class="text-light-gray hover:text-white transition-colors cursor-pointer">About</span>
+            <div class="relative group">
+                <span class="text-light-gray hover:text-white transition-colors flex items-center cursor-pointer">
+                    Services <i class="fa-solid fa-chevron-down ml-1 text-xs"></i>
+                </span>
+                <div class="absolute top-full left-0 mt-2 w-48 bg-charcoal rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                    <span class="block px-4 py-2 text-light-gray hover:text-white cursor-pointer">IT Operations</span>
+                    <span class="block px-4 py-2 text-light-gray hover:text-white cursor-pointer">Cybersecurity</span>
+                    <span class="block px-4 py-2 text-light-gray hover:text-white cursor-pointer">Custom Software</span>
+                </div>
+            </div>
+            <span class="text-light-gray hover:text-white transition-colors cursor-pointer">Projects</span>
+            <span class="text-light-gray hover:text-white transition-colors cursor-pointer">Team</span>
+            <span class="text-light-gray hover:text-white transition-colors cursor-pointer">Contact</span>
+        </div>
+        
+        <div class="md:hidden">
+            <button id="mobile-menu-btn" class="text-white">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+    
+    <div id="mobile-menu" class="md:hidden bg-charcoal hidden">
+        <div class="px-6 py-4 space-y-3">
+            <span class="block text-light-gray hover:text-white cursor-pointer">Home</span>
+            <span class="block text-light-gray hover:text-white cursor-pointer">About</span>
+            <span class="block text-light-gray hover:text-white cursor-pointer">Services</span>
+            <span class="block text-light-gray hover:text-white cursor-pointer">Projects</span>
+            <span class="block text-light-gray hover:text-white cursor-pointer">Team</span>
+            <span class="block text-light-gray hover:text-white cursor-pointer">Contact</span>
+        </div>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section id="hero" class="network-bg h-[800px] flex items-center justify-center text-center relative">
+    <div class="max-w-5xl mx-auto px-6 z-10">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+            Your Trusted Partner in<br>
+            <span class="text-primary">IT Operations Excellence</span>
+        </h1>
+        
+        <p class="text-xl text-light-gray mb-8 max-w-3xl mx-auto">
+            We architect resilient, secure, and automated IT ecosystems that power mission‑critical outcomes.
+        </p>
+        
+        <div class="flex flex-wrap justify-center gap-4 mb-8">
+            <div class="flex items-center bg-charcoal/50 px-4 py-2 rounded-full">
+                <i class="fa-solid fa-brain text-primary mr-2"></i>
+                <span class="text-sm">Neural Network Insights</span>
+            </div>
+            <div class="flex items-center bg-charcoal/50 px-4 py-2 rounded-full">
+                <i class="fa-solid fa-robot text-primary mr-2"></i>
+                <span class="text-sm">Automation at Scale</span>
+            </div>
+            <div class="flex items-center bg-charcoal/50 px-4 py-2 rounded-full">
+                <i class="fa-solid fa-lightbulb text-primary mr-2"></i>
+                <span class="text-sm">Innovation‑Driven</span>
+            </div>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <span class="bg-primary hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold transition-all hover:transform hover:scale-105 cursor-pointer">
+                Get a Proposal
+            </span>
+            <span class="border border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-lg font-semibold transition-all cursor-pointer">
+                View Projects
+            </span>
+        </div>
+    </div>
+</section>
+
+<!-- Trust Panel -->
+<section id="trust-panel" class="bg-charcoal py-16">
+    <div class="max-w-6xl mx-auto px-6">
+        <p class="text-lg text-light-gray mb-12 text-center max-w-4xl mx-auto">
+            We partner with organizations where reliability, security, and compliance matter most, delivering measurable outcomes that strengthen operational resilience and accelerate mission success.
+        </p>
+        
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+            <div class="bg-dark p-6 rounded-lg border border-primary/30">
+                <h3 class="text-primary font-semibold mb-2">Government &amp; Public Sector</h3>
+                <p class="text-light-gray text-sm">Trusted delivery in high‑assurance environments</p>
+            </div>
+            <div class="bg-dark p-6 rounded-lg border border-primary/30">
+                <h3 class="text-primary font-semibold mb-2">Defense &amp; Military</h3>
+                <p class="text-light-gray text-sm">Operational excellence for mission‑critical systems</p>
+            </div>
+            <div class="bg-dark p-6 rounded-lg border border-primary/30">
+                <h3 class="text-primary font-semibold mb-2">Regulated Enterprises</h3>
+                <p class="text-light-gray text-sm">Security, resilience, and measurable outcomes</p>
+            </div>
+        </div>
+        
+        <div class="bg-dark/50 p-6 rounded-lg border border-primary/20">
+            <h4 class="text-primary font-semibold mb-2">NIST &amp; CMMC Readiness</h4>
+            <p class="text-light-gray text-sm">We help companies implement NIST SP 800‑171 controls and prepare for CMMC compliance through practical security programs that enhance both protection and productivity.</p>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="bg-dark py-20">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+            <div>
+                <div class="bg-charcoal p-8 rounded-lg border border-primary/30 text-center">
+                    <img class="w-20 h-20 mx-auto mb-4" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/7e22955690-757bb43fba00272288a0.png" alt="mountain logo with tech elements, modern minimalist design">
+                    <h3 class="text-xl font-semibold text-primary">SCARDUS TECH</h3>
+                </div>
+            </div>
+            <div>
+                <h2 class="text-3xl font-bold mb-6">Welcome to SCARDUS TECH</h2>
+                <p class="text-light-gray mb-4">
+                    Welcome to SCARDUS TECH — where innovation meets reliability.
+                </p>
+                <p class="text-light-gray mb-4">
+                    Inspired by the enduring strength of the Sharr Mountains, we bring that same resilience to your technology infrastructure.
+                </p>
+                <p class="text-light-gray">
+                    We deliver end-to-end technology solutions from helpdesk support to custom software development, ensuring your operations run smoothly and securely.
+                </p>
+            </div>
+        </div>
+        
+        <div class="grid lg:grid-cols-2 gap-8">
+            <div id="what-we-do" class="bg-charcoal p-8 rounded-lg">
+                <h3 class="text-2xl font-bold mb-6 text-primary">What We Do</h3>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="font-semibold text-white mb-1">Helpdesk Support (Tier 1 &amp; 2)</h4>
+                        <p class="text-light-gray text-sm">Fast help for everyday issues, with simple escalation when needed.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-white mb-1">Buy &amp; Set Up Tech</h4>
+                        <p class="text-light-gray text-sm">We source the right gear, install it, and manage it through its lifecycle.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-white mb-1">Keep Things Running</h4>
+                        <p class="text-light-gray text-sm">Updates, monitoring, and quick incident response.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-white mb-1">Custom Software</h4>
+                        <p class="text-light-gray text-sm">Tools built for your workflow that connect to your existing systems.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-white mb-1">End‑to‑End Delivery</h4>
+                        <p class="text-light-gray text-sm">Planning, rollout, documentation, and training—handled for you.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="why-choose-us" class="bg-charcoal p-8 rounded-lg">
+                <h3 class="text-2xl font-bold mb-6 text-primary">Why Choose Us</h3>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="font-semibold text-white mb-1">Reliable</h4>
+                        <p class="text-light-gray text-sm">Built for uptime and predictable support.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-white mb-1">Secure</h4>
+                        <p class="text-light-gray text-sm">Practical security aligned to NIST 800‑171 and CMMC.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-white mb-1">Experienced</h4>
+                        <p class="text-light-gray text-sm">Government, defense, and regulated industries.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-white mb-1">Measurable</h4>
+                        <p class="text-light-gray text-sm">SLAs, KPIs, and clear reporting tied to your goals.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-white mb-1">Collaborative</h4>
+                        <p class="text-light-gray text-sm">Transparent, proactive, and accountable.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="bg-charcoal py-20">
+    <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-16">Our Services</h2>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-dark p-6 rounded-lg border border-primary/30 hover:border-primary transition-colors">
+                <i class="fa-solid fa-cogs text-primary text-2xl mb-4"></i>
+                <h3 class="font-semibold mb-3">End‑to‑End IT Operations</h3>
+                <p class="text-light-gray text-sm">Strategy, architecture, day‑2 ops, continuous improvement.</p>
+            </div>
+            
+            <div class="bg-dark p-6 rounded-lg border border-primary/30 hover:border-primary transition-colors">
+                <i class="fa-solid fa-headset text-primary text-2xl mb-4"></i>
+                <h3 class="font-semibold mb-3">Helpdesk &amp; Field Support</h3>
+                <p class="text-light-gray text-sm">Tier 1/2 SLAs, escalation playbooks, remote/on‑site support.</p>
+            </div>
+            
+            <div class="bg-dark p-6 rounded-lg border border-primary/30 hover:border-primary transition-colors">
+                <i class="fa-solid fa-cloud text-primary text-2xl mb-4"></i>
+                <h3 class="font-semibold mb-3">Infrastructure &amp; Cloud</h3>
+                <p class="text-light-gray text-sm">Networks, servers, endpoints on‑prem/cloud (AWS/Azure). Migrations, hardening, backup/DR.</p>
+            </div>
+            
+            <div class="bg-dark p-6 rounded-lg border border-primary/30 hover:border-primary transition-colors">
+                <i class="fa-solid fa-shield-alt text-primary text-2xl mb-4"></i>
+                <h3 class="font-semibold mb-3">Cybersecurity &amp; Compliance</h3>
+                <p class="text-light-gray text-sm">NIST SP 800‑171, CMMC readiness, SSP/POA&amp;M, vuln mgmt, monitoring.</p>
+            </div>
+            
+            <div class="bg-dark p-6 rounded-lg border border-primary/30 hover:border-primary transition-colors">
+                <i class="fa-solid fa-robot text-primary text-2xl mb-4"></i>
+                <h3 class="font-semibold mb-3">Automation &amp; AI Integrations</h3>
+                <p class="text-light-gray text-sm">RPA/orchestration, AI/ML for insight and triage.</p>
+            </div>
+            
+            <div class="bg-dark p-6 rounded-lg border border-primary/30 hover:border-primary transition-colors">
+                <i class="fa-solid fa-code text-primary text-2xl mb-4"></i>
+                <h3 class="font-semibold mb-3">Custom Apps &amp; Integrations</h3>
+                <p class="text-light-gray text-sm">Tailored apps, APIs, data pipelines.</p>
+            </div>
+            
+            <div class="bg-dark p-6 rounded-lg border border-primary/30 hover:border-primary transition-colors">
+                <i class="fa-solid fa-chart-line text-primary text-2xl mb-4"></i>
+                <h3 class="font-semibold mb-3">Observability &amp; SRE</h3>
+                <p class="text-light-gray text-sm">Logging/metrics/tracing, SLOs/SLAs, reliability/MTTR.</p>
+            </div>
+            
+            <div class="bg-dark p-6 rounded-lg border border-primary/30 hover:border-primary transition-colors">
+                <i class="fa-solid fa-shopping-cart text-primary text-2xl mb-4"></i>
+                <h3 class="font-semibold mb-3">Procurement &amp; Deployment</h3>
+                <p class="text-light-gray text-sm">Vendor‑neutral selection, licensing, lifecycle, standardized rollouts.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="bg-dark py-20">
+    <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-16">Featured Projects</h2>
+        
+        <div class="grid lg:grid-cols-3 gap-8">
+            <div class="bg-charcoal rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all cursor-pointer" onclick="openModal('project1')">
+                <img class="w-full h-48" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/12f27bf073-dec7da90898ca8e51f4a.png" alt="modern ERP dashboard interface, clean design, business analytics">
+                <div class="p-6">
+                    <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs">Enterprise Software</span>
+                    <h3 class="font-semibold mt-4 mb-2">ERP, minus the headaches</h3>
+                    <p class="text-light-gray text-sm mb-4">Planning got sharper… without 12 spreadsheets.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-dark px-2 py-1 rounded text-xs">.NET Core</span>
+                        <span class="bg-dark px-2 py-1 rounded text-xs">React</span>
+                        <span class="bg-dark px-2 py-1 rounded text-xs">SQL Server</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-charcoal rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all cursor-pointer" onclick="openModal('project2')">
+                <img class="w-full h-48" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/ded698c839-1c335baf521e9fd89fa8.png" alt="cloud infrastructure diagram, AWS services, modern tech visualization">
+                <div class="p-6">
+                    <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs">Cloud Migration</span>
+                    <h3 class="font-semibold mt-4 mb-2">Cloud migration, no drama</h3>
+                    <p class="text-light-gray text-sm mb-4">Secure landing zone… panic slowed down.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-dark px-2 py-1 rounded text-xs">AWS</span>
+                        <span class="bg-dark px-2 py-1 rounded text-xs">Docker</span>
+                        <span class="bg-dark px-2 py-1 rounded text-xs">Kubernetes</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-charcoal rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all cursor-pointer" onclick="openModal('project3')">
+                <img class="w-full h-48" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/7ed8cb527b-55bc621c3837bc883b30.png" alt="help desk support center, modern office, customer service">
+                <div class="p-6">
+                    <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs">IT Support</span>
+                    <h3 class="font-semibold mt-4 mb-2">Help desk that actually helps</h3>
+                    <p class="text-light-gray text-sm mb-4">24/7 support, clear SLAs… even on Mondays.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-dark px-2 py-1 rounded text-xs">ServiceNow</span>
+                        <span class="bg-dark px-2 py-1 rounded text-xs">ITIL</span>
+                        <span class="bg-dark px-2 py-1 rounded text-xs">Power BI</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why SCARDUS TECH Section -->
+<section id="why-scardus" class="bg-charcoal py-20">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl font-bold mb-8">Why SCARDUS TECH</h2>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-primary mt-1 mr-3"></i>
+                        <div>
+                            <h3 class="font-semibold mb-1">Reliability</h3>
+                            <p class="text-light-gray text-sm">Reduce downtime and risk with proven methodologies</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-primary mt-1 mr-3"></i>
+                        <div>
+                            <h3 class="font-semibold mb-1">Security &amp; Compliance</h3>
+                            <p class="text-light-gray text-sm">NIST SP 800‑171, CMMC readiness built-in</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-primary mt-1 mr-3"></i>
+                        <div>
+                            <h3 class="font-semibold mb-1">Automation</h3>
+                            <p class="text-light-gray text-sm">Orchestration and intelligent tooling</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-check-circle text-primary mt-1 mr-3"></i>
+                        <div>
+                            <h3 class="font-semibold mb-1">Partner Mindset</h3>
+                            <p class="text-light-gray text-sm">Transparent collaboration and accountability</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-dark p-8 rounded-lg border border-primary/30">
+                <h3 class="text-xl font-semibold mb-4">Ready to Transform Your IT?</h3>
+                <p class="text-light-gray mb-6">Our team brings decades of experience in mission-critical environments. Let's discuss how we can strengthen your operations.</p>
+                <span class="bg-primary hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold inline-block transition-all cursor-pointer">
+                    Start a Conversation
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Strip -->
+<section id="cta-strip" class="bg-primary py-16">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-4">Ready to accelerate your IT operations?</h2>
+        <p class="text-lg mb-8 opacity-90">Let's align on your goals and build a secure, automated, and resilient foundation together.</p>
+        <span class="bg-white text-primary hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-all cursor-pointer">
+            Explore Services
+        </span>
+    </div>
+</section>
+
+<!-- Team Section -->
+<section id="team" class="bg-dark py-20">
+    <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-16">Our Team</h2>
+        
+        <div class="grid lg:grid-cols-3 gap-8">
+            <div class="bg-charcoal p-6 rounded-lg text-center">
+                <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-8.jpg" alt="Agim Ukshini" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                <h3 class="font-semibold text-xl mb-2">Agim Ukshini</h3>
+                <p class="text-primary mb-4">Management</p>
+                <p class="text-light-gray text-sm mb-4">16 years leading complex IT programs with calm leadership, delivering outcomes on time and budget.</p>
+                <div class="text-xs text-light-gray">
+                    <p>Cross‑Functional Team Leadership</p>
+                    <p>Program Management</p>
+                    <p>Infrastructure Deployment</p>
+                </div>
+            </div>
+            
+            <div class="bg-charcoal p-6 rounded-lg text-center">
+                <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-9.jpg" alt="Avni Ademi" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                <h3 class="font-semibold text-xl mb-2">Avni Ademi</h3>
+                <p class="text-primary mb-4">Senior DevOps</p>
+                <p class="text-light-gray text-sm mb-4">Streamlines operations, reliability, risk reduction with practical and business‑minded approach.</p>
+                <div class="text-xs text-light-gray">
+                    <p>Data Management</p>
+                    <p>Network Engineering</p>
+                    <p>System Security</p>
+                </div>
+            </div>
+            
+            <div class="bg-charcoal p-6 rounded-lg text-center">
+                <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-3.jpg" alt="Ardian Krasniqi" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                <h3 class="font-semibold text-xl mb-2">Ardian Krasniqi</h3>
+                <p class="text-primary mb-4">Infrastructure &amp; Security Lead</p>
+                <p class="text-light-gray text-sm mb-4">Designs resilient environments and pragmatic security programs supporting growth and compliance.</p>
+                <div class="text-xs text-light-gray">
+                    <p>Cybersecurity</p>
+                    <p>Cloud Architecture</p>
+                    <p>Disaster Recovery</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="bg-charcoal py-20">
+    <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-16">Get In Touch</h2>
+        
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="glass-card p-8 rounded-lg">
+                <form class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Name</label>
+                        <input type="text" class="w-full bg-dark/50 border border-primary/30 rounded-lg px-4 py-3 focus:outline-none focus:border-primary" placeholder="Your name">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Email</label>
+                        <input type="email" class="w-full bg-dark/50 border border-primary/30 rounded-lg px-4 py-3 focus:outline-none focus:border-primary" placeholder="your@email.com">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Message</label>
+                        <textarea rows="4" class="w-full bg-dark/50 border border-primary/30 rounded-lg px-4 py-3 focus:outline-none focus:border-primary" placeholder="Tell us about your project..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-primary hover:bg-blue-600 text-white py-3 rounded-lg font-semibold transition-all">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+            
+            <div class="text-center">
+                <img class="w-64 h-64 mx-auto mb-8" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/455e29f66a-ca2a1455eda5042363ae.png" alt="email illustration, modern minimalist style, floating animation elements">
+                <h3 class="text-2xl font-semibold mb-4">Let's Build Something Great</h3>
+                <p class="text-light-gray">Ready to discuss your IT challenges? We're here to help.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer id="footer" class="bg-dark border-t border-charcoal py-12">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="grid lg:grid-cols-3 gap-8">
+            <div class="flex items-center space-x-3">
+                <img class="w-10 h-10" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/5d58064a24-9e957f86163b498af211.png" alt="modern tech company logo with mountain elements, minimal design, blue and white colors">
+                <span class="text-xl font-bold">SCARDUS TECH</span>
+            </div>
+            
+            <div class="text-center">
+                <p class="text-light-gray mb-2">info@scardustech.com</p>
+                <p class="text-light-gray mb-2">M2 road, Ferizaj - Kacanik, 70000</p>
+                <p class="text-light-gray text-sm">© 2025 SCARDUS TECH. All rights reserved.</p>
+            </div>
+            
+            <div class="flex justify-center lg:justify-end space-x-4">
+                <span class="text-light-gray hover:text-primary transition-colors cursor-pointer">
+                    <i class="fa-brands fa-linkedin text-xl"></i>
+                </span>
+                <span class="text-light-gray hover:text-primary transition-colors cursor-pointer">
+                    <i class="fa-brands fa-twitter text-xl"></i>
+                </span>
+                <span class="text-light-gray hover:text-primary transition-colors cursor-pointer">
+                    <i class="fa-brands fa-github text-xl"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Project Modal -->
+<div id="project-modal" class="fixed inset-0 bg-black/80 z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-charcoal rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="p-6 border-b border-primary/30 flex justify-between items-center">
+            <h3 id="modal-title" class="text-xl font-semibold"></h3>
+            <button onclick="closeModal()" class="text-light-gray hover:text-white">
+                <i class="fa-solid fa-times text-xl"></i>
+            </button>
+        </div>
+        <div class="p-6">
+            <div id="modal-content"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Mobile menu toggle
+document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+});
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Project modal functions
+function openModal(projectId) {
+    const modal = document.getElementById('project-modal');
+    const title = document.getElementById('modal-title');
+    const content = document.getElementById('modal-content');
+    
+    const projects = {
+        'project1': {
+            title: 'ERP, minus the headaches',
+            category: 'Enterprise Software',
+            description: 'Complete ERP system overhaul that streamlined operations and eliminated manual processes. Planning got sharper without 12 spreadsheets.',
+            stats: ['50% reduction in processing time', '99.9% uptime achieved', '200+ users onboarded'],
+            tech: ['.NET Core', 'React', 'SQL Server', 'Azure DevOps']
+        },
+        'project2': {
+            title: 'Cloud migration, no drama',
+            category: 'Cloud Migration',
+            description: 'Seamless migration to AWS with zero downtime. Secure landing zone implementation that reduced operational overhead.',
+            stats: ['Zero downtime migration', '40% cost reduction', 'Enhanced security posture'],
+            tech: ['AWS', 'Docker', 'Kubernetes', 'Terraform']
+        },
+        'project3': {
+            title: 'Help desk that actually helps',
+            category: 'IT Support',
+            description: '24/7 support system with clear SLAs that works even on Mondays. Comprehensive ITIL-based service management.',
+            stats: ['<2 min response time', '95% first-call resolution', '99% satisfaction rating'],
+            tech: ['ServiceNow', 'ITIL', 'Power BI', 'Teams Integration']
+        }
+    };
+    
+    const project = projects[projectId];
+    if (project) {
+        title.textContent = project.title;
+        content.innerHTML = `
+            <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm mb-4 inline-block">${project.category}</span>
+            <p class="text-light-gray mb-6">${project.description}</p>
+            <h4 class="font-semibold mb-3">Key Results:</h4>
+            <ul class="text-light-gray mb-6 space-y-1">
+                ${project.stats.map(stat => `<li>• ${stat}</li>`).join('')}
+            </ul>
+            <h4 class="font-semibold mb-3">Technologies:</h4>
+            <div class="flex flex-wrap gap-2">
+                ${project.tech.map(tech => `<span class="bg-dark px-3 py-1 rounded text-sm">${tech}</span>`).join('')}
+            </div>
+        `;
+        modal.classList.remove('hidden');
+    }
+}
+
+function closeModal() {
+    document.getElementById('project-modal').classList.add('hidden');
+}
+
+// Close modal on outside click
+document.getElementById('project-modal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeModal();
+    }
+});
+</script>
+
+
+</body></html>

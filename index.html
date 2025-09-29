@@ -8,9 +8,13 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="theme-hero">
+    <!-- Global hero-style animated background -->
+    <div class="global-background" aria-hidden="true">
+        <svg id="globalNetwork" viewBox="0 0 1200 2400" preserveAspectRatio="xMidYMid slice"></svg>
+    </div>
     <header id="header">
         <nav class="container">
             <div class="logo">
@@ -34,6 +38,9 @@
                         <li><a href="#services">Software Development</a></li>
                     </ul>
                 </li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -44,7 +51,7 @@
                 <svg id="heroNetwork" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice"></svg>
             </div>
             <div class="container hero-content">
-                <h1 class="hero-title reveal reveal-delay-1">Your Trusted Partner in IT Operations Excellence</h1>
+                <h1 class="hero-title reveal reveal-delay-1">Your Trusted Partner in <span class="gradient-text">IT Operations Excellence</span></h1>
                 <p class="hero-subtitle reveal reveal-delay-2">We architect resilient, secure, and automated IT ecosystems that power mission‑critical outcomes.</p>
 
                 <div class="feature-pills reveal reveal-delay-3">
@@ -60,6 +67,11 @@
                         <svg class="pill-icon" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.17-1.01 3.74-2.5 5l-.5 4h-8l-.5-4C6.99 12.74 6 11.17 6 9a7 7 0 0 1 6-7Z"/><path d="M9 22h6"/></svg>
                         <span>Innovation-Driven</span>
                     </div>
+                </div>
+
+                <div class="hero-ctas reveal reveal-delay-3" style="margin-top: 0.5rem;">
+                    <a class="btn btn-primary" href="#contact">Get a Proposal</a>
+                    <a class="btn btn-secondary" href="#projects">View Projects</a>
                 </div>
 
                 <!-- Trust Narrative -->
@@ -94,13 +106,13 @@
         <section id="about" class="about">
             <div class="container about-grid">
                 <div class="about-visual reveal reveal-delay-1" aria-hidden="true">
-                    <!-- Logo-based mountain with pinpoint overlay -->
-                    <div class="about-mountain-wrap">
-                        <img src="ScardusLogo.png" alt="Scardus Tech Mountain Logo" class="about-mountain-logo" />
-                        <div class="pin-overlay" aria-hidden="true">
-                            <span class="pin-core"></span>
-                            <span class="pin-ring"></span>
-                        </div>
+                    <!-- Framed image treatment inspired by Codetiq -->
+                    <div class="about-photo-frame">
+                        <span class="frame-blob"></span>
+                        <span class="frame-ring"></span>
+                        <span class="frame-dots"></span>
+                        <img src="ScardusLogo.png" alt="Scardus Tech" class="about-photo" />
+                        <span class="frame-shine"></span>
                     </div>
                 </div>
 
@@ -122,24 +134,24 @@
                     <h3>What We Do</h3>
                     <ul class="services-list">
                         <li>
-                            <strong>Helpdesk Outsourcing (Tier 1 & 2)</strong>
-                            Modern, SLA‑driven user support with clear escalation paths.
+                            <strong>Helpdesk Support (Tier 1 & 2)</strong>
+                            Fast help for everyday issues, with simple escalation when needed.
                         </li>
                         <li>
-                            <strong>Tech Procurement & Install</strong>
-                            Vendor‑neutral sourcing, deployment, and lifecycle management.
+                            <strong>Buy & Set Up Tech</strong>
+                            We source the right gear, install it, and manage it through its lifecycle.
                         </li>
                         <li>
-                            <strong>Maintenance & Ops Reliability</strong>
-                            Proactive updates, monitoring, and incident response.
+                            <strong>Keep Things Running</strong>
+                            Updates, monitoring, and quick incident response.
                         </li>
                         <li>
                             <strong>Custom Software</strong>
-                            Purpose‑built tools that streamline operations and integrate with your stack.
+                            Tools built for your workflow that connect to your existing systems.
                         </li>
                         <li>
                             <strong>End‑to‑End Delivery</strong>
-                            From planning to handover, documentation, and training.
+                            Planning, rollout, documentation, and training—handled for you.
                         </li>
                     </ul>
                 </div>
@@ -147,24 +159,24 @@
                     <h3>Why Choose Us</h3>
                     <ul class="services-list">
                         <li>
-                            <strong>Reliability First</strong>
-                            Resilient architectures and predictable support.
+                            <strong>Reliable</strong>
+                            Built for uptime and predictable support.
                         </li>
                         <li>
-                            <strong>Security & Compliance</strong>
-                            Practical NIST SP 800‑171 implementation and CMMC readiness.
+                            <strong>Secure</strong>
+                            Practical security aligned to NIST 800‑171 and CMMC.
                         </li>
                         <li>
-                            <strong>Proven Expertise</strong>
-                            Government, defense, and regulated enterprise environments.
+                            <strong>Experienced</strong>
+                            Government, defense, and regulated industries.
                         </li>
                         <li>
-                            <strong>Measurable Outcomes</strong>
-                            SLAs, KPIs, and clear reporting tied to business goals.
+                            <strong>Measurable</strong>
+                            SLAs, KPIs, and clear reporting tied to your goals.
                         </li>
                         <li>
-                            <strong>Partner Mindset</strong>
-                            Collaborative delivery with transparency and ownership.
+                            <strong>Collaborative</strong>
+                            Transparent, proactive, and accountable.
                         </li>
                     </ul>
                 </div>
@@ -214,7 +226,7 @@
         <section id="projects" class="projects">
             <div class="container">
                 <h2 class="gradient-text reveal">Our Success Stories</h2>
-                <p class="section-subtitle reveal reveal-delay-1">Discover some of our recent projects and innovations</p>
+                <p class="section-subtitle reveal reveal-delay-1">A few wins we're proud of (and still brag about)</p>
                 
                 <div class="projects-grid">
                     <!-- Project Card 1 -->
@@ -224,8 +236,8 @@
                             <div class="project-category">Software Development</div>
                         </div>
                         <div class="project-content">
-                            <h3>Enterprise Resource Management</h3>
-                            <p>Custom ERP solution for manufacturing industry with real-time analytics and reporting.</p>
+                            <h3>ERP, minus the headaches</h3>
+                            <p>Planning got sharper. Reports got faster. Fire drills got rarer. Leaders finally saw what’s going on—without 12 spreadsheets.</p>
                             <div class="project-tech">
                                 <span class="tech-tag">.NET Core</span>
                                 <span class="tech-tag">React</span>
@@ -244,8 +256,8 @@
                             <div class="project-category">Infrastructure</div>
                         </div>
                         <div class="project-content">
-                            <h3>Cloud Migration & Setup</h3>
-                            <p>Complete cloud infrastructure setup and migration for a financial services company.</p>
+                            <h3>Cloud migration, no drama</h3>
+                            <p>Secure landing zone, automated deploys, smaller bills. Releases sped up, panic slowed down.</p>
                             <div class="project-tech">
                                 <span class="tech-tag">AWS</span>
                                 <span class="tech-tag">Docker</span>
@@ -264,8 +276,8 @@
                             <div class="project-category">IT Support</div>
                         </div>
                         <div class="project-content">
-                            <h3>24/7 Help Desk Implementation</h3>
-                            <p>Comprehensive help desk solution with automated ticket management and SLA monitoring.</p>
+                            <h3>Help desk that actually helps</h3>
+                            <p>24/7 support, clear SLAs, smart routing. Users get answers faster—and yes, even on Mondays.</p>
                             <div class="project-tech">
                                 <span class="tech-tag">ServiceNow</span>
                                 <span class="tech-tag">ITIL</span>
@@ -321,6 +333,44 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why SCARDUS TECH section -->
+        <section id="why" class="why">
+            <div class="container">
+                <div>
+                    <h2 class="gradient-text">Why SCARDUS TECH?</h2>
+                    <p class="section-subtitle">Outcomes over outputs. Secure, reliable, and measurable delivery across your IT landscape.</p>
+                    <ul class="why-list">
+                        <li class="why-item"><strong>Reliability</strong><br>Architectures and processes that reduce downtime and risk.</li>
+                        <li class="why-item"><strong>Security & Compliance</strong><br>NIST SP 800‑171 implementation and CMMC readiness.</li>
+                        <li class="why-item"><strong>Automation</strong><br>Modernize workflows with orchestration and intelligent tooling.</li>
+                        <li class="why-item"><strong>Partner Mindset</strong><br>Transparent collaboration focused on your mission.</li>
+                    </ul>
+                </div>
+                <div class="ceo-card">
+                    <h3>Message from the SCARDUS TEAM</h3>
+                    <p>
+                        At SCARDUS TECH, we believe trust is earned through consistent delivery. Our team brings pragmatic
+                        engineering, clear communication, and a bias for action to every engagement — from helpdesk to cloud and
+                        cybersecurity. We meet you where you are and help you get where you need to go.
+                    </p>
+                    <div style="margin-top: 0.75rem;">
+                        <a class="btn btn-primary" href="#contact">Start a Conversation</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA strip -->
+        <section class="cta-strip">
+            <div class="container">
+                <h3>Ready to accelerate your IT operations?</h3>
+                <p>Let’s align on your goals and build a secure, automated, and resilient foundation together.</p>
+                <div class="hero-ctas" style="margin-top: 0.5rem;">
+                    <a class="btn btn-secondary" href="#services">Explore Services</a>
                 </div>
             </div>
         </section>
@@ -409,6 +459,55 @@
                 </div>
             </div>
         </section>
+
+        <!-- Contact section (moved to bottom) -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>How can we help you?</h2>
+                <div class="contact-grid">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="cta-button">Send Message</button>
+                    </form>
+                    <!-- Mail animation on the right -->
+                    <div class="contact-visual" aria-hidden="true">
+                        <svg class="mail-illustration" viewBox="0 0 200 200" role="img" focusable="false">
+                            <defs>
+                                <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#dbeafe"/>
+                                    <stop offset="100%" stop-color="#e0e7ff"/>
+                                </linearGradient>
+                            </defs>
+                            <!-- Soft background blob -->
+                            <circle cx="100" cy="100" r="70" fill="url(#grad)" opacity="0.8"></circle>
+                            <!-- Envelope -->
+                            <g class="mail-float">
+                                <rect x="50" y="70" width="100" height="60" rx="8" fill="#2563eb" opacity="0.95"></rect>
+                                <path d="M50 80 L100 115 L150 80" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+                                <path d="M50 70 L100 105 L150 70" fill="none" stroke="#93c5fd" stroke-width="2" opacity="0.85"/>
+                            </g>
+                            <!-- Subtle sparkles -->
+                            <g class="sparkles">
+                                <circle cx="150" cy="60" r="3" fill="#60a5fa"/>
+                                <circle cx="40" cy="120" r="2" fill="#a78bfa"/>
+                                <circle cx="130" cy="150" r="2.5" fill="#22d3ee"/>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -419,10 +518,8 @@
                     <span>SCARDUS TECH</span>
                 </div>
                 <div class="footer-info">
-                    <h3>Get in Touch</h3>
-                    <p>Email: contact@scardustech.com</p>
-                    <p>Phone: +383 48 378 288</p>
-                    <p>Address: , M2 road, Ferizaj - Kacanik<br>70000</p>
+                    <p>Email: <a href="mailto:info@scardustech.com">info@scardustech.com</a></p>
+                    <p>Address: M2 road, Ferizaj - Kacanik<br>70000</p>
                     <p>&copy; 2025 SCARDUS TECH. All rights reserved.</p>
                 </div>
                 <div class="social-links">
