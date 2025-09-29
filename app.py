@@ -23,9 +23,9 @@ limiter = Limiter(
 # Security headers via Talisman
 csp = {
     'default-src': ["'self'"],
-    'script-src': ["'self'", "'unsafe-inline'"],  # keep simple; tighten if needed
-    'style-src': ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
-    'img-src': ["'self'", 'data:'],
+    'script-src': ["'self'", "'unsafe-inline'", 'https://cdn.tailwindcss.com', 'https://cdnjs.cloudflare.com'],
+    'style-src': ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com', 'https://cdn.tailwindcss.com', 'https://cdnjs.cloudflare.com'],
+    'img-src': ["'self'", 'data:', 'https://images.unsplash.com', 'https://storage.googleapis.com'],
     'font-src': ["'self'", 'data:', 'https://fonts.gstatic.com'],
     'connect-src': ["'self'"],
 }
