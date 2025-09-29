@@ -32,7 +32,7 @@ class SimpleHandler(http.server.SimpleHTTPRequestHandler):
             self.path = '/403.html'
         
         # Block everything else except allowed files
-        allowed_files = ['index.html', '403.html', 'ScardusLogo.png', 'AgimUkshini.jpg', 'AvniAdemi.jpg', 'project1.jpg', 'project2.jpg', 'project3.jpg']
+        allowed_files = ['index.html', '403.html', 'ScardusLogo.png', 'AgimUkshini.jpg', 'AvniAdemi.jpg', 'AdiMcMeti.jpg', 'adnanhaliti.jpg', 'project1.jpg', 'project2.jpg', 'project3.jpg']
         
         if self.path.startswith('/'):
             filename = self.path[1:]  # Remove leading slash
