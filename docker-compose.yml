@@ -16,17 +16,19 @@ services:
       - proxy
 
   site:
-    image: nginx:alpine
+    image: python:3.12-alpine
     container_name: scardus-site
     restart: unless-stopped
     # Bind-mount the project root to nginx html (static site)
     # Ensure your index.html and assets are in the project directory
+    working_dir: /app
     volumes:
-      - ./:/usr/share/nginx/html:ro
+      - ./:/app:ro
+    command: python server.py
     expose:
-      - "80"
+      - "8000"
     ports:
-      - "8080:80"
+      - "8080:8000"
     networks:
       - proxy
 
