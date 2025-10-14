@@ -1,0 +1,39 @@
+version: "3.8"
+
+services:
+  proxy:
+    image: jc21/nginx-proxy-manager:latest
+    container_name: nginx-proxy-manager
+    restart: unless-stopped
+    ports:
+      - "80:80"     # HTTP
+      - "81:81"     # NPM Admin UI
+      - "443:443"   # HTTPS
+    volumes:
+      - npm_data:/data
+      - npm_letsencrypt:/etc/letsencrypt
+    networks:
+      - proxy
+
+  site:
+    image: nginx:alpine
+    container_name: scardus-site
+    restart: unless-stopped
+    # Bind-mount the project root to nginx html (static site)
+    # Ensure your index.html and assets are in the project directory
+    volumes:
+      - ./:/usr/share/nginx/html:ro
+    expose:
+      - "80"
+    ports:
+      - "8080:80"
+    networks:
+      - proxy
+
+volumes:
+  npm_data:
+  npm_letsencrypt:
+
+networks:
+  proxy:
+    driver: bridge
