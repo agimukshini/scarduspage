@@ -1,0 +1,251 @@
+/* Hide scrollbar */
+::-webkit-scrollbar { display: none; }
+html, body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Typography */
+body { 
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.01em;
+}
+
+/* Futuristic Grid Background Animation */
+.network-bg {
+    background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #1a1a1a 100%);
+    position: relative;
+    overflow: hidden;
+}
+.network-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(90deg, rgba(6, 182, 212, 0.03) 1px, transparent 1px),
+        linear-gradient(rgba(6, 182, 212, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(168, 85, 247, 0.02) 1px, transparent 1px),
+        linear-gradient(rgba(168, 85, 247, 0.02) 1px, transparent 1px);
+    background-size: 50px 50px, 50px 50px, 100px 100px, 100px 100px;
+    animation: gridFloat 20s infinite linear;
+    opacity: 0.5;
+}
+.network-bg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(6, 182, 212, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(168, 85, 247, 0.06) 0%, transparent 50%);
+    animation: pulse 8s ease-in-out infinite;
+}
+@keyframes gridFloat {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+}
+@keyframes pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+}
+
+/* Gradient Text Effect */
+.gradient-text {
+    background: linear-gradient(135deg, #06B6D4 0%, #A855F7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 3s ease infinite;
+}
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* Neon Glow Effects */
+.glow-cyan {
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.3),
+                0 0 40px rgba(6, 182, 212, 0.1);
+    transition: all 0.3s ease;
+}
+.glow-cyan:hover {
+    box-shadow: 0 0 30px rgba(6, 182, 212, 0.5),
+                0 0 60px rgba(6, 182, 212, 0.2),
+                0 0 90px rgba(6, 182, 212, 0.1);
+    transform: translateY(-2px);
+}
+
+.glow-border {
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    transition: all 0.3s ease;
+}
+.glow-border:hover {
+    border-color: rgba(6, 182, 212, 0.8);
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.2),
+                inset 0 0 20px rgba(6, 182, 212, 0.05);
+}
+
+/* Pulsing CTA Button */
+.pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+}
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(6, 182, 212, 0.4),
+                    0 0 40px rgba(6, 182, 212, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(6, 182, 212, 0.6),
+                    0 0 60px rgba(6, 182, 212, 0.3),
+                    0 0 90px rgba(6, 182, 212, 0.1);
+    }
+}
+
+/* Enhanced Glassmorphism */
+.glass-card {
+    backdrop-filter: blur(16px) saturate(180%);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(6, 182, 212, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.glass-strong {
+    backdrop-filter: blur(20px) saturate(200%);
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(6, 182, 212, 0.2);
+}
+
+/* Scan Line Effect */
+.scan-line {
+    position: relative;
+    overflow: hidden;
+}
+.scan-line::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(6, 182, 212, 0.8), 
+        transparent);
+    animation: scan 3s linear infinite;
+}
+@keyframes scan {
+    0% { top: -100%; }
+    100% { top: 200%; }
+}
+
+/* Smooth Reveal Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: reveal 0.8s ease forwards;
+}
+@keyframes reveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Geometric Accent */
+.geometric-accent {
+    position: relative;
+}
+.geometric-accent::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 40px;
+    height: 40px;
+    border-top: 2px solid rgba(6, 182, 212, 0.3);
+    border-left: 2px solid rgba(6, 182, 212, 0.3);
+}
+.geometric-accent::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    width: 40px;
+    height: 40px;
+    border-bottom: 2px solid rgba(168, 85, 247, 0.3);
+    border-right: 2px solid rgba(168, 85, 247, 0.3);
+}
+
+/* Enhanced Card Hover */
+.futuristic-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+.futuristic-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(6, 182, 212, 0.2),
+                0 0 40px rgba(6, 182, 212, 0.1);
+}
+
+/* Neural Network Canvas */
+#neural-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.6;
+}
+
+/* Ensure content is above canvas */
+section, header, footer {
+    position: relative;
+    z-index: 10;
+}
+
+/* Matrix Effect */
+#matrix-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.15;
+}
+
+
+/* SCARDUS Brand Typography */
+.brand-name {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #06B6D4 0%, #FFFFFF 50%, #06B6D4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(6, 182, 212, 0.3);
+    position: relative;
+}
+
+.brand-name::after {
+    content: 'SCARDUS TECH';
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    background: linear-gradient(135deg, #06B6D4 0%, #A855F7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: blur(8px);
+    opacity: 0.5;
+}
