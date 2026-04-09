@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMMC Assessment Partnership - SCARDUS TECH</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#06B6D4",  // Modern Cyan - tech-forward, high contrast
+                        dark: "#000000",
+                        charcoal: "#262626",
+                        "light-gray": "#D3D3D3",
+                        "off-white": "#F8F8F8"
+                    }
+                }
+            }
+        };
+    </script>
+
+    <!-- Font Awesome -->
+    <script>window.FontAwesomeConfig = { autoReplaceSvg: 'nest' };</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-dark text-white">
+
+<!-- Neural Network Canvas -->
+<canvas id="neural-canvas"></canvas>
+
+<!-- Header -->
+<header id="header" class="fixed top-0 w-full z-50 glass-strong border-b border-primary/20">
+  <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="hover:scale-105 transition-transform duration-300">
+          <img class="max-h-10" src="assets/ScardustechLogo/logo_horizontal/Scardustech-white.png" alt="Scardus Tech Logo">
+      </a>
+
+      <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-light-gray hover:text-white transition-colors">Home</a>
+          <a href="index.html#about" class="text-light-gray hover:text-white transition-colors">About</a>
+          <a href="cmmc.html" class="text-light-gray hover:text-white transition-colors">CMMC</a>
+          <a href="about-us.html" class="text-light-gray hover:text-white transition-colors">Partners & Community</a>
+          <a href="index.html#services" class="text-light-gray hover:text-white transition-colors">Services</a>
+      </div>
+
+      <div class="md:hidden">
+          <button id="mobile-menu-btn" class="text-white">
+              <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+      </div>
+        </nav>
+
+  <div id="mobile-menu" class="md:hidden glass-strong hidden border-t border-primary/20">
+      <div class="px-6 py-4 space-y-3">
+          <a href="index.html" class="block text-light-gray hover:text-white py-2">Home</a>
+          <a href="index.html#about" class="block text-light-gray hover:text-white py-2">About</a>
+          <a href="cmmc.html" class="block text-light-gray hover:text-white py-2">CMMC</a>
+          <a href="about-us.html" class="block text-light-gray hover:text-white py-2">Partners & Community</a>
+
+          <div class="py-2">
+              <p class="text-white font-semibold mb-2">Services</p>
+              <div class="pl-4 space-y-2 border-l-2 border-primary/30">
+                  <a href="index.html#services" class="block text-sm text-light-gray hover:text-primary">
+                      <i class="fa-solid fa-cogs text-primary mr-2"></i>IT Operations
+                  </a>
+                  <a href="index.html#services" class="block text-sm text-light-gray hover:text-primary">
+                      <i class="fa-solid fa-shield-alt text-primary mr-2"></i>Cybersecurity & Compliance
+                  </a>
+                  <a href="index.html#services" class="block text-sm text-light-gray hover:text-primary">
+                      <i class="fa-solid fa-cloud text-primary mr-2"></i>Infrastructure & Cloud
+                  </a>
+                  <a href="index.html#services" class="block text-sm text-light-gray hover:text-primary">
+                      <i class="fa-solid fa-code text-primary mr-2"></i>Custom Software
+                  </a>
+                  <a href="index.html#services" class="block text-sm text-light-gray hover:text-primary">
+                      <i class="fa-solid fa-robot text-primary mr-2"></i>Automation & AI
+                  </a>
+              </div>
+          </div>
+
+          <a href="mailto:info@scardustech.com?subject=Service Inquiry" class="block bg-primary/20 hover:bg-primary text-primary hover:text-white px-4 py-2 rounded text-sm font-semibold transition-all text-center mt-4">
+              Request Consultation
+          </a>
+      </div>
+  </div>
+    </header>
+
+<!-- CMMC Partnership Section -->
+<section id="cmmc" class="bg-charcoal py-20 scroll-mt-24">
+  <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-16">CMMC Assessment Partnership</h2>
+
+      <div class="glass-card p-8 rounded-lg glow-border mb-12">
+          <div class="flex flex-col md:flex-row items-center gap-8">
+              <div class="flex-shrink-0">
+                  <img src="assets/images/team/jamesharper.png" alt="James Harper - Lead Certified CMMC Assessor" class="w-48 h-48 rounded-full object-cover">
+              </div>
+              <div class="text-left">
+                  <h3 class="text-2xl font-bold text-primary mb-2">James Harper - Lead Certified CMMC Assessor</h3>
+                  <div class="text-light-gray mb-4">
+                      <p class="mb-3">
+                          James Harper is an experienced Lead Certified CMMC Assessor (CCA) who specializes in preparing U.S. defense contractors for successful CMMC assessments from start to finish. With more than 25 years in the aerospace industry leading teams to design and implement secure communications systems, he brings a strong blend of technical depth and practical, mission-focused experience.
+                      </p>
+                      <p class="mb-3">
+                          As the founder of <a href="https://quatronics.com/" target="_blank" class="text-primary hover:underline">Quatronics, LLC</a>, James helps defense contractors navigate the complexities of CMMC compliance and governance, ensuring they meet rigorous cybersecurity requirements to protect sensitive information. He is a Certified Information Systems Security Professional (CISSP), a Certified Cloud Security Professional (CCSP), a Certified CMMC Professional (CCP), and a Lead Certified CMMC Assessor (CCA).
+                      </p>
+                      <p>
+                          James regularly contributes to the cybersecurity community through educational content and thought leadership on CMMC compliance and defense industry best practices.
+                      </p>
+                  </div>
+                  
+                  <div class="mt-6 pt-4 border-t border-primary/30">
+                      <h4 class="text-lg font-semibold text-primary mb-3">Partner with Us for CMMC Compliance</h4>
+                      <p class="text-light-gray text-sm mb-4">
+                          Through our partnership with James Harper of <a href="https://quatronics.com/" target="_blank" class="text-primary hover:underline">Quatronics, LLC</a>, we offer comprehensive CMMC preparation services, from initial gap analysis to final assessment readiness.
+                      </p>
+                      <div class="flex flex-wrap gap-3">
+                          <a href="mailto:info@scardustech.com?subject=CMMC Assessment Partnership&body=I am interested in learning more about your CMMC assessment partnership." class="inline-block bg-primary hover:bg-cyan-600 text-white px-6 py-2 rounded-lg font-semibold transition-all cursor-pointer">
+                              Contact SCARDUS TECH
+                          </a>
+                          <a href="https://quatronics.com/" target="_blank" class="inline-block bg-dark border border-primary text-primary hover:bg-primary hover:text-white px-6 py-2 rounded-lg font-semibold transition-all cursor-pointer">
+                              Visit Quatronics
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="glass-card p-8 rounded-lg glow-border">
+          <h3 class="text-2xl font-bold text-primary mb-4">About CMMC</h3>
+          <div class="text-light-gray mb-4">
+              <p class="mb-3">
+                  The Cybersecurity Maturity Model Certification (CMMC) is a unified standard for implementing cybersecurity across the Defense Industrial Base (DIB). It combines various cybersecurity standards into a single certification framework to ensure that contractors implement appropriate safeguards to protect sensitive information.
+              </p>
+              <p class="mb-3">
+                  CMMC addresses both Federal Contract Information (FCI) and Controlled Unclassified Information (CUI) as stipulated in FAR or DFARS clauses. Organizations must implement appropriate cybersecurity measures based on the requirements specified in their contracts.
+              </p>
+              <p>
+                  Understanding NIST provisions is crucial for CMMC compliance. The framework incorporates cybersecurity standards from NIST Special Publication 800-171 and other sources, ensuring that defense contractors implement appropriate safeguards to protect both FCI and CUI as required by FAR and DFARS clauses.
+              </p>
+              <p>
+                  Our partnership with James Harper provides you with direct access to a Lead Certified CMMC Assessor who understands the nuances of the assessment process and can guide your organization toward successful certification.
+              </p>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer id="footer" class="bg-dark border-t border-charcoal py-12">
+  <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-3 gap-8">
+          <div class="flex items-center space-x-3">
+              <img class="max-h-10" src="assets/ScardustechLogo/logo_horizontal/Scardustech-white.png" alt="Scardus Tech Logo">
+          </div>
+
+          <div class="text-center">
+              <p class="text-light-gray mb-2">info@scardustech.com</p>
+              <p class="text-light-gray mb-2">Rruga Adem Demaci, Nr. 253, 70000, Ferizaj, Republika e Kosovës</p>
+              <p class="text-light-gray text-sm">© 2025 SCARDUS TECH. All rights reserved.</p>
+                </div>
+
+          <div class="flex justify-center lg:justify-end space-x-4">
+              <span class="text-light-gray hover:text-primary transition-colors cursor-pointer">
+                  <i class="fa-brands fa-linkedin text-xl"></i>
+              </span>
+              <span class="text-light-gray hover:text-primary transition-colors cursor-pointer">
+                  <i class="fa-brands fa-twitter text-xl"></i>
+              </span>
+              <span class="text-light-gray hover:text-primary transition-colors cursor-pointer">
+                  <i class="fa-brands fa-github text-xl"></i>
+              </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<!-- JavaScript Files -->
+<script src="assets/js/main.js"></script>
+<script src="assets/js/animations.js"></script>
+
+<!-- Mobile Menu Script -->
+<script>
+document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - SCARDUS TECH</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#06B6D4",  // Modern Cyan - tech-forward, high contrast
+                        dark: "#000000",
+                        charcoal: "#262626",
+                        "light-gray": "#D3D3D3",
+                        "off-white": "#F8F8F8"
+                    }
+                }
+            }
+        };
+    </script>
+
+    <!-- Font Awesome -->
+    <script>window.FontAwesomeConfig = { autoReplaceSvg: 'nest' };</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-dark text-white">
+
+<!-- Neural Network Canvas -->
+<canvas id="neural-canvas"></canvas>
+
+<!-- Header -->
+<header id="header" class="fixed top-0 w-full z-50 glass-strong border-b border-primary/20">
+  <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="hover:scale-105 transition-transform duration-300">
+          <img class="max-h-10" src="assets/ScardustechLogo/logo_horizontal/Scardustech-white.png" alt="Scardus Tech Logo">
+      </a>
+
+      <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-light-gray hover:text-white transition-colors">Home</a>
+          <a href="index.html#about" class="text-light-gray hover:text-white transition-colors">About</a>
+          <a href="cmmc.html" class="text-light-gray hover:text-white transition-colors">CMMC</a>
+          <a href="about-us.html" class="text-light-gray hover:text-white transition-colors">Partners & Community</a>
+          <a href="index.html#services" class="text-light-gray hover:text-white transition-colors">Services</a>
+      </div>
+
+      <div class="md:hidden">
+          <button id="mobile-menu-btn" class="text-white">
+              <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+      </div>
+        </nav>
+
+  <div id="mobile-menu" class="md:hidden glass-strong hidden border-t border-primary/20">
+      <div class="px-6 py-4 space-y-3">
+          <a href="index.html" class="block text-light-gray hover:text-white py-2">Home</a>
+          <a href="index.html#about" class="block text-light-gray hover:text-white py-2">About</a>
+          <a href="cmmc.html" class="block text-light-gray hover:text-white py-2">CMMC</a>
+          <a href="about-us.html" class="block text-light-gray hover:text-white py-2">Partners & Community</a>
+
+          <div class="py-2">
+              <p class="text-white font-semibold mb-2">Services</p>
+              <div class="pl-4 space-y-2 border-l-2 border-primary/30">
+                  <a href="index.html#services" class="block text-sm text-light-gray hover:text-primary">
+                      <i class="fa-solid fa-cogs text-primary mr-2"></i>IT Operations
+                  </a>
+                  <a href="index.html#services" class="block text-sm text-light-gray hover:text-primary">
+                      <i class="fa-solid fa-shield-alt text-primary mr-2"></i>Cybersecurity & Compliance
+                  </a>
+                  <a href="index.html#services" class="block text-sm text-light-gray hover:text-primary">
+                      <i class="fa-solid fa-cloud text-primary mr-2"></i>Infrastructure & Cloud
+                  </a>
+                  <a href="index.html#services" class="block text-sm text-light-gray hover:text-primary">
+                      <i class="fa-solid fa-code text-primary mr-2"></i>Custom Software
+                  </a>
+                  <a href="index.html#services" class="block text-sm text-light-gray hover:text-primary">
+                      <i class="fa-solid fa-robot text-primary mr-2"></i>Automation & AI
+                  </a>
+              </div>
+          </div>
+
+          <a href="mailto:info@scardustech.com?subject=Service Inquiry" class="block bg-primary/20 hover:bg-primary text-primary hover:text-white px-4 py-2 rounded text-sm font-semibold transition-all text-center mt-4">
+              Request Consultation
+          </a>
+      </div>
+  </div>
+    </header>
+
+<!-- Partners Section -->
+<section id="partners" class="bg-dark py-20 scroll-mt-24">
+  <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-16">Our Partners</h2>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div class="glass-card p-6 rounded-lg glow-border text-center flex flex-col items-center">
+              <div class="mb-3">
+                  <img src="assets/images/partners/influxo-logo.svg" alt="Influxo Logo" class="h-12 object-contain">
+              </div>
+              <h3 class="text-lg font-semibold mb-2 text-primary">Influxo</h3>
+              <p class="text-light-gray text-sm mb-3">Technology company specializing in data analytics, machine learning, and AI-driven solutions.</p>
+              <a href="https://influxo.dev" target="_blank" class="inline-block bg-primary/20 hover:bg-primary text-primary hover:text-white px-3 py-2 rounded text-xs font-semibold transition-all">
+                  Visit Website
+              </a>
+          </div>
+
+          <div class="glass-card p-6 rounded-lg glow-border text-center flex flex-col items-center">
+              <div class="mb-3">
+                  <img src="assets/images/partners/arcom-logo.png" alt="ARCOM International Logo" class="h-12 object-contain">
+              </div>
+              <h3 class="text-lg font-semibold mb-2 text-primary">ARCOM International</h3>
+              <p class="text-light-gray text-sm mb-3">Consulting firm specializing in international development and strategic planning.</p>
+              <a href="https://arcom-international.com" target="_blank" class="inline-block bg-primary/20 hover:bg-primary text-primary hover:text-white px-3 py-2 rounded text-xs font-semibold transition-all">
+                  Visit Website
+              </a>
+          </div>
+
+          <div class="glass-card p-6 rounded-lg glow-border text-center flex flex-col items-center">
+              <div class="mb-3">
+                  <img src="assets/images/partners/caritas-kosova-logo.svg" alt="Caritas Kosova Logo" class="h-12 object-contain">
+              </div>
+              <h3 class="text-lg font-semibold mb-2 text-primary">Caritas Kosova</h3>
+              <p class="text-light-gray text-sm mb-3">Humanitarian organization providing social services and community development.</p>
+              <a href="https://caritaskosova.org" target="_blank" class="inline-block bg-primary/20 hover:bg-primary text-primary hover:text-white px-3 py-2 rounded text-xs font-semibold transition-all">
+                  Visit Website
+              </a>
+          </div>
+
+          <div class="glass-card p-6 rounded-lg glow-border text-center flex flex-col items-center">
+              <div class="mb-3">
+                  <img src="assets/images/partners/consulting-bam-logo.png" alt="Consulting BAM Logo" class="h-12 object-contain">
+              </div>
+              <h3 class="text-lg font-semibold mb-2 text-primary">Consulting BAM</h3>
+              <p class="text-light-gray text-sm mb-3">Specialized business advisory services and strategic planning solutions.</p>
+              <a href="https://consulting-bam.com" target="_blank" class="inline-block bg-primary/20 hover:bg-primary text-primary hover:text-white px-3 py-2 rounded text-xs font-semibold transition-all">
+                  Visit Website
+              </a>
+          </div>
+
+          <div class="glass-card p-6 rounded-lg glow-border text-center flex flex-col items-center">
+              <div class="mb-3">
+                  <img src="assets/images/partners/venture-uplink-logo.webp" alt="Venture Uplink Logo" class="h-12 object-contain">
+              </div>
+              <h3 class="text-lg font-semibold mb-2 text-primary">Venture Uplink</h3>
+              <p class="text-light-gray text-sm mb-3">Platform connecting entrepreneurs with investors and business growth opportunities.</p>
+              <a href="https://ventureuplink.com" target="_blank" class="inline-block bg-primary/20 hover:bg-primary text-primary hover:text-white px-3 py-2 rounded text-xs font-semibold transition-all">
+                  Visit Website
+              </a>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- Community Contributions Section -->
+<section id="community" class="bg-charcoal py-20 scroll-mt-24">
+  <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-16">Community Contributions</h2>
+
+      <div class="glass-card p-8 rounded-lg glow-border mb-12">
+          <div class="flex flex-col md:flex-row items-center gap-8">
+              <div class="flex-shrink-0">
+                  <img src="assets/images/team/FLOSSK.png" alt="FLOSSK Logo" class="w-32 h-32 rounded object-contain">
+              </div>
+              <div class="text-left">
+                  <h3 class="text-2xl font-bold text-primary mb-4">FLOSSK Partnership</h3>
+                  <div class="text-light-gray mb-4">
+                      <p class="mb-3">
+                          We proudly partner with <a href="https://flossk.org" target="_blank" class="text-primary hover:underline">FLOSSK</a>, a nonprofit organization dedicated to promoting Free/Libre and Open Source Software in Kosovo and the broader region. Through this partnership, we contribute to the development of the local tech community and education initiatives.
+                      </p>
+                      <p class="mb-3">
+                          Our contributions include providing a free network laboratory for students to gain hands-on experience with real-world infrastructure. This lab serves as a training ground where students can experiment with networking equipment, security tools, and infrastructure management in a safe, supportive environment.
+                      </p>
+                      <p>
+                          Additionally, we periodically host training sessions covering development, infrastructure, and cybersecurity topics. These sessions are designed to share our expertise with the next generation of IT professionals and give back to the community that has supported our growth.
+                      </p>
+                  </div>
+                  
+                  <div class="mt-6 pt-4 border-t border-primary/30">
+                      <h4 class="text-lg font-semibold text-primary mb-3">Join Our Community Efforts</h4>
+                      <p class="text-light-gray text-sm mb-4">
+                          Interested in our community initiatives or want to participate in our training programs? Reach out to learn how you can get involved.
+                      </p>
+                      <a href="mailto:info@scardustech.com?subject=Community Contribution Inquiry&body=I am interested in learning more about your community contribution initiatives." class="inline-block bg-primary hover:bg-cyan-600 text-white px-6 py-2 rounded-lg font-semibold transition-all cursor-pointer">
+                          Contact Us
+                      </a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+      <!-- Veteran Discount Section -->
+      <div class="mt-16 bg-charcoal py-12 border-t border-primary/20">
+          <div class="max-w-6xl mx-auto px-6">
+              <div class="text-center">
+                  <h3 class="text-2xl font-bold text-primary mb-4">Supporting Our Veterans</h3>
+                  <div class="max-w-3xl mx-auto">
+                      <p class="text-light-gray mb-4">
+                          We proudly offer special discounts on all our services to businesses owned by Kosovo Veterans and NATO countries Veterans. 
+                          As a token of our appreciation for your service and continued contributions to society, we provide preferential rates 
+                          to support veteran-owned enterprises.
+                      </p>
+                      <p class="text-light-gray">
+                          Contact us to learn more about our veteran business owner program and how you can benefit from our special pricing.
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+<!-- Footer -->
+<footer id="footer" class="bg-dark border-t border-charcoal py-12">
+  <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-3 gap-8">
+          <div class="flex items-center space-x-3">
+              <img class="max-h-10" src="assets/ScardustechLogo/logo_horizontal/Scardustech-white.png" alt="Scardus Tech Logo">
+          </div>
+
+          <div class="text-center">
+              <p class="text-light-gray mb-2">info@scardustech.com</p>
+              <p class="text-light-gray mb-2">Rruga Adem Demaci, Nr. 253, 70000, Ferizaj, Republika e Kosovës</p>
+              <p class="text-light-gray text-sm">© 2025 SCARDUS TECH. All rights reserved.</p>
+                </div>
+
+          <div class="flex justify-center lg:justify-end space-x-4">
+              <span class="text-light-gray hover:text-primary transition-colors cursor-pointer">
+                  <i class="fa-brands fa-linkedin text-xl"></i>
+              </span>
+              <span class="text-light-gray hover:text-primary transition-colors cursor-pointer">
+                  <i class="fa-brands fa-twitter text-xl"></i>
+              </span>
+              <span class="text-light-gray hover:text-primary transition-colors cursor-pointer">
+                  <i class="fa-brands fa-github text-xl"></i>
+              </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<!-- JavaScript Files -->
+<script src="assets/js/main.js"></script>
+<script src="assets/js/animations.js"></script>
+
+<!-- Mobile Menu Script -->
+<script>
+document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+});
+</script>
+
+</body>
+</html>
