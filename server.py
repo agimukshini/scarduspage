@@ -24,6 +24,7 @@ ALLOWED_FILES = {
     'assets/js/animations.js',
     'assets/ScardustechLogo/logo_horizontal/Scardustech-white.png',
     'assets/ScardustechLogo/large/Scardustech_logo_ white.png',
+    'assets/ScardustechLogo/Small/Scardustech_logo_s_white.png',
     'assets/images/team/AgimUkshini.jpg',
     'assets/images/team/AvniAdemi.jpg',
     'assets/images/team/AdiMcMeti.jpg',

@@ -6,7 +6,8 @@
       "Bash(docker-compose *)",
       "Bash(docker compose up *)",
       "Bash(docker ps)",
-      "Bash(docker compose down)"
+      "Bash(docker compose down)",
+      "Bash(curl *)"
     ]
   },
   "$version": 3
