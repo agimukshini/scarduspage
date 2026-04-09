@@ -7,9 +7,10 @@ WORKDIR /app
 # Copy only the essential files
 COPY index.html .
 COPY 403.html .
+COPY about-us.html .
+COPY cmmc.html .
 COPY server.py .
-COPY *.png .
-COPY *.jpg .
+COPY assets/ ./assets/
 
 # Expose port
 EXPOSE 8000
