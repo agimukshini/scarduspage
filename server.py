@@ -23,7 +23,7 @@ ALLOWED_FILES = {
     'assets/js/main.js',
     'assets/js/animations.js',
     'assets/ScardustechLogo/logo_horizontal/Scardustech-white.png',
-    'assets/ScardustechLogo/large/Scardustech_logo_ white.png',
+    'assets/ScardustechLogo/large/Scardustech_logo_white.png',
     'assets/ScardustechLogo/Small/Scardustech_logo_s_white.png',
     'assets/images/team/AgimUkshini.jpg',
     'assets/images/team/AvniAdemi.jpg',
@@ -71,7 +71,7 @@ class SecureHandler(http.server.SimpleHTTPRequestHandler):
         filename = self.path.lstrip('/')
         
         # Security check: only allow whitelisted files
-        if filename not in ALLOWED_FILES and not any(filename.startswith(f'{prefix}/') for prefix in ['assets/css', 'assets/js', 'assets/images']):
+        if filename not in ALLOWED_FILES and not any(filename.startswith(f'{prefix}/') for prefix in ['assets/css', 'assets/js', 'assets/images', 'assets/ScardustechLogo']):
             self.send_error(404)
             return
         
