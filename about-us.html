@@ -57,9 +57,9 @@
       </div>
 
       <div class="md:hidden">
-          <button id="mobile-menu-btn" class="text-white">
+          <button id="mobile-menu-btn" type="button" class="text-white" aria-label="Open menu" aria-expanded="false">
               <i class="fa-solid fa-bars text-xl"></i>
-            </button>
+          </button>
       </div>
         </nav>
 
@@ -252,14 +252,6 @@
 <!-- JavaScript Files -->
 <script src="assets/js/main.js"></script>
 <script src="assets/js/animations.js"></script>
-
-<!-- Mobile Menu Script -->
-<script>
-document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-    const menu = document.getElementById('mobile-menu');
-    menu.classList.toggle('hidden');
-});
-</script>
 
 </body>
 </html>

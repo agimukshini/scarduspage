@@ -1,26 +1,34 @@
 // ============================================
 // Mobile Menu Toggle
 // ============================================
-document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+(function initMobileMenu() {
+    const menuBtn = document.getElementById('mobile-menu-btn');
     const menu = document.getElementById('mobile-menu');
-    menu.classList.toggle('hidden');
-});
+    if (!menuBtn || !menu) return;
 
-// Close mobile menu when a link is clicked
-document.querySelectorAll('#mobile-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-        const menu = document.getElementById('mobile-menu');
-        menu.classList.add('hidden');
+    menuBtn.addEventListener('click', function() {
+        const isOpen = menu.classList.toggle('hidden') === false;
+        menuBtn.setAttribute('aria-expanded', isOpen);
     });
-});
+
+    menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.add('hidden');
+            menuBtn.setAttribute('aria-expanded', 'false');
+        });
+    });
+})();
 
 // ============================================
 // Smooth Scrolling for Anchor Links
 // ============================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (!href || href === '#') return;
+
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const target = document.querySelector(href);
         if (target) {
             target.scrollIntoView({
                 behavior: 'smooth',
@@ -61,7 +69,8 @@ function openModal(projectId) {
     const modal = document.getElementById('project-modal');
     const title = document.getElementById('modal-title');
     const content = document.getElementById('modal-content');
-    
+    if (!modal || !title || !content) return;
+
     const project = projectData[projectId];
     if (project) {
         title.textContent = project.title;
@@ -82,12 +91,17 @@ function openModal(projectId) {
 }
 
 function closeModal() {
-    document.getElementById('project-modal').classList.add('hidden');
+    const modal = document.getElementById('project-modal');
+    if (modal) {
+        modal.classList.add('hidden');
+    }
 }
 
-// Close modal on outside click
-document.getElementById('project-modal').addEventListener('click', function(e) {
-    if (e.target === this) {
-        closeModal();
-    }
-});
+const projectModal = document.getElementById('project-modal');
+if (projectModal) {
+    projectModal.addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeModal();
+        }
+    });
+}
