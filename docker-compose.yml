@@ -22,8 +22,8 @@ services:
     init: true
     pids_limit: 50
     mem_limit: 64m
-    expose:
-      - "80"
+    ports:
+      - "8080:80"
     networks:
       - proxy
 
