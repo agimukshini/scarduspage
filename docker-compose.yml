@@ -22,8 +22,6 @@ services:
     init: true
     expose:
       - "8000"
-    ports:
-      - "8080:8000"
     networks:
       - proxy
 
