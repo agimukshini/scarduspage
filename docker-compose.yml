@@ -20,8 +20,6 @@ services:
     container_name: scardus-site
     restart: unless-stopped
     init: true
-    pids_limit: 100
-    mem_limit: 128m
     ports:
       - "8080:80"
     networks:
