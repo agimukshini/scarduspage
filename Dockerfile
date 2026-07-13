@@ -7,6 +7,7 @@ COPY about-us.html /usr/share/nginx/html/
 COPY cmmc.html /usr/share/nginx/html/
 COPY robots.txt /usr/share/nginx/html/
 COPY sitemap.xml /usr/share/nginx/html/
+COPY googlee5688b3ee413fb1c.html /usr/share/nginx/html/
 COPY assets/ /usr/share/nginx/html/assets/
 
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
